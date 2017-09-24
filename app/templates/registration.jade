@@ -1,0 +1,93 @@
+extends include/templates
+block title
+	title SELLYOURMODELS - Регистрация
+block content	
+	// BEGIN BODY 
+
+	div.main-wrapper
+
+		include include/header
+
+		// BEGIN CONTENT 
+
+		main.content
+			div.wrapper
+				div.main-wrap
+					div.main-wrap__header
+						h1 Регистрация
+					div.wrap
+
+						div.wrap-right 
+							h4.wrap__title Полезная информация
+							ol.list
+								li Минимальное колличество покупки - 2 PRO.
+								li PRO начисляется единовременно и не имеет ограничения во времени скачивания.
+								li 30 FREE начисляется каждый день в рамках оплаченного срока.
+								li При оплате через терминалы и другие оффлайн способы - срок получения доступа может достигать 3-х дней.
+								li Оплата с помощью банковской карты - только для стран СНГ.
+								li Оплата через терминалы - только для России.
+								li В случае утери pro-модели или неудачном скачаивании - восстановить её в истории покупок.
+								li Если у вас уже есть PRO-доступы - последуюшая покупка суммируется.
+								li Для корпоративных клиентов. Минимальный заказ 1000 доступов PROFI. Оформление договора и безналичный расчет. Для уточнения деталей обращайтесь в службу поддержки.
+								li Служба поддержки. При обращении обязательно указывайте номер заказа!
+							ol 
+								li Минимальное колличество покупки - 2 PRO.
+								li PRO начисляется единовременно и не имеет ограничения во времени скачивания.
+						
+						div.wrap-left 
+							p Хотите делать покупки гораздо быстрей? Купите предоплачиваемые Кредиты и скачивайте товары по одному клику!
+							
+							div.box-form.registration
+								form(action="#")
+									div.box-field
+										label.box-field__label E-mail
+										div.box-field__input
+											input.form-control(type="email")
+									div.box-field
+										label.box-field__label Пароль
+										div.box-field__input
+											input.form-control(type="password")
+									div.box-field
+										label.box-field__label Повторите пароль
+										div.box-field__input
+											input.form-control(type="password")
+									div.box-field.captcha
+										label.box-field__label Вы человек?
+										div.box-field__input
+											img(src="img/captcha.png", alt="")
+									div.box-field.checkbox.nowrap
+										div.box-field__input
+											input.styler(type="checkbox", id="check_1")
+											label.nowrap.box-field__label(for="check_1") Я согласен с 
+												a.link(href="#") пользовательским соглашением
+
+									button.button.button_warning.button_block.box-form__button(type="submit") Создать аккаунт
+									p
+										a.link(href="#") Уже есть учетная запись?
+										span.devider |   
+										a.link(href="#") Забыли пароль?
+							
+							div.enter-social
+								p Войти через аккаунт в социальных сетях
+								ul.social-wrap 
+									li.social-wrap__item 
+										a.social-wrap__link.fb(href="#"): i.fa.fa-facebook
+									li.social-wrap__item 
+										a.social-wrap__link.vk(href="#"): i.fa.fa-vk
+									li.social-wrap__item 
+										a.social-wrap__link.gp(href="#"): i.fa.fa-google-plus
+				div.banner.banner_horizontal
+						a(href="#"): span.banner__title advertising
+				
+
+		// CONTENT EOF	
+
+		include include/footer
+
+	div.block-pof
+
+	include include/popup
+
+	// BODY EOF  
+
+

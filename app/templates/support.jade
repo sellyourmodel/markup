@@ -1,0 +1,95 @@
+extends include/templates
+block title
+	title SELLYOURMODELS - Поддержка
+block content	
+	// BEGIN BODY 
+
+	div.main-wrapper
+
+		include include/header
+
+		// BEGIN CONTENT 
+
+		main.content
+			div.wrapper
+				div.main-wrap
+					div.main-wrap__header
+						h1 Поддержка
+					div.wrap.support
+						
+						div.wrap-right 
+							div.box-form
+								h4.accordion__head Отправить вопрос в службу поддержки
+								p Текст ошибки. Минимальное колличество покупки - 2 PRO.  PRO начисляется единовременно и не имеет ограничения во 
+								form.mt5(action="#")
+									div.box-field
+										label Категория
+										div.box-field__input
+											select.styler.form-control(data-placeholder="Выбрать категорию")
+												option
+												option(value="1") Категория 1
+												option(value="2") Категория 2
+												option(value="3") Категория 3
+									div.box-field
+										label Заголовок
+										div.box-field__input
+											input.form-control(type="text")
+									div.box-field
+										label Детали
+										div.box-field__input
+											textarea.form-control
+
+									div.settings-buttons-form
+										img(src="img/buttons.png", alt="")
+
+									div.box-field.captcha
+										label.box-field__label Вы человек?
+										div.box-field__input
+											img(src="img/captcha.png", alt="")
+		
+									input.button.button_warning.button_block(type="submit", value="Задать вопрос")
+
+						div.wrap-left 
+							div.accordion
+								div.accordion-wrap.active
+									h4.accordion__head.open: a(href="#") Название вопроса, при нажатии показывается ответ?
+									div.accordion__body(style="display: block")
+										p.
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio.
+
+								div.accordion-wrap
+									h4.accordion__head: a(href="#") Есть ли у вас Гарантия Возврата Денег?
+									div.accordion__body
+										p.
+											Мы блокируем все бесплатные почтовые сервисы, потому что большинство мошенников используют бесплатные почтовые сервисы для мошеннических операций. Мы заботимся о наших продавцах и пытаемся защитить их всеми возможными способами. Но если вы хотите делать покупки через бесплатный сервис, то вы можете связаться с нашей службой поддержки и попросить добавить ваш email в Белый Список адресов. Приносим извинения за неудобства.
+								div.accordion-wrap
+									h4.accordion__head: a(href="#") Информация о возврате
+									div.accordion__body
+										p.
+											Мы блокируем все бесплатные почтовые сервисы, потому что большинство мошенников используют бесплатные почтовые сервисы для мошеннических операций. Мы заботимся о наших продавцах и пытаемся защитить их всеми возможными способами. Но если вы хотите делать покупки через бесплатный сервис, то вы можете связаться с нашей службой поддержки и попросить добавить ваш email в Белый Список адресов. Приносим извинения за неудобства.
+								div.accordion-wrap.active
+									h4.accordion__head.open: a(href="#") Почему я не могу купить товар через мой бесплатный email аккаунт?
+									div.accordion__body(style="display: block")
+										p.
+											Мы блокируем все бесплатные почтовые сервисы, потому что большинство мошенников используют бесплатные почтовые сервисы для мошеннических операций. Мы заботимся о наших продавцах и пытаемся защитить их всеми возможными способами. Но если вы хотите делать покупки через бесплатный сервис, то вы можете связаться с нашей службой поддержки и попросить добавить ваш email в Белый Список адресов. Приносим извинения за неудобства.
+								div.accordion-wrap
+									h4.accordion__head: a(href="#") Информация о возврате
+									div.accordion__body
+										p.
+											Мы блокируем все бесплатные почтовые сервисы, потому что большинство мошенников используют бесплатные почтовые сервисы для мошеннических операций. Мы заботимся о наших продавцах и пытаемся защитить их всеми возможными способами. Но если вы хотите делать покупки через бесплатный сервис, то вы можете связаться с нашей службой поддержки и попросить добавить ваш email в Белый Список адресов. Приносим извинения за неудобства.
+	
+				div.banner.banner_horizontal
+						a(href="#"): span.banner__title advertising
+				
+
+		// CONTENT EOF	
+
+		include include/footer
+
+	div.block-pof
+
+	include include/popup
+
+	// BODY EOF  
+
+

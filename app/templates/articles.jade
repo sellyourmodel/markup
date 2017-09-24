@@ -1,0 +1,132 @@
+extends include/templates
+block title
+	title SELLYOURMODELS - Статьи
+block content	
+	// BEGIN BODY 
+
+	div.main-wrapper
+
+		include include/header
+
+		// BEGIN CONTENT 
+
+		main.content
+			div.wrapper
+				div.wrapper-column.clearfix
+					
+					div.content-wrap.column.bg
+						div.main-wrap
+							div.main-wrap__header
+								div.box-select-group
+									select.styler
+										option(value="0") Все категории
+										option(value="1") Категория 1
+										option(value="2") Категория 2
+									select.styler(style="width: 100px")
+										option(value="0") По дате
+										option(value="1") рейтингу
+
+								h1 Статьи
+							
+							div.wrap
+								div.box-articles
+									article.article
+										div.box-top
+											div.box-top__avatar
+												a(href="#"): img(src="img/article-avatar.png", alt="")
+											div.box-top__cont
+												span.author от:
+													a(href="#") Si Maclencel 
+													span.ic.ic_models-one
+												h3.article__title: a(href="#") Статья про моделирование
+												div
+													span.date 08.10.2016 10:56
+													span.product-panel__item
+														span.product-panel__icon
+															i.ic.ic_eye
+															span 50
+														span.product-panel__icon
+															i.product-panel__icon-icon.product-panel__icon-icon__comments
+															span 50
+														span.product-panel__icon
+															i.product-panel__icon-icon.product-panel__icon-icon__stars
+															span 50
+										div.article__body
+
+											img(src="img/article-img.png", alt="")
+											p.
+												Всем привет ! Делюсь свеженьким , коммерческим проектом а стиле ар-деко. Кваhтира находится в Киеве. <br>
+												Спасибо авторам за прекрасные модели ! Приятного просмотра !
+											
+											p: a.more(href="#") Читать дальше...
+
+									article.article
+										div.box-top
+											div.box-top__avatar
+												a(href="#"): img(src="img/article-avatar.png", alt="")
+											div.box-top__cont
+												span.author от:
+													a(href="#") Si Maclencel 
+													span.ic.ic_models-one
+												h3.article__title: a(href="#") Статья про моделирование
+												div
+													span.date 08.10.2016 10:56
+													span.product-panel__item
+														span.product-panel__icon
+															i.ic.ic_eye
+															span 50
+														span.product-panel__icon
+															i.product-panel__icon-icon.product-panel__icon-icon__comments
+															span 50
+														span.product-panel__icon
+															i.product-panel__icon-icon.product-panel__icon-icon__stars
+															span 50
+										div.article__body
+
+											img(src="img/article-img.png", alt="")
+											p.
+												Всем привет ! Делюсь свеженьким , коммерческим проектом а стиле ар-деко. Кваhтира находится в Киеве. <br>
+												Спасибо авторам за прекрасные модели ! Приятного просмотра !
+											
+											p: a.more(href="#") Читать дальше...
+						
+					aside.column 
+						div.banner
+							a(href="#"): span.banner__title advertising
+						div.banner.banner_sm
+							a(href="#"): span.banner__title advertising
+				div.pagination
+					ul.pagination-list
+						li.pagination-list__item.prev
+							a.pagination-list__link(href="#"): span.ic.ic_arrow
+						li.pagination-list__item
+							a.pagination-list__link(href="#") 1 
+						li.pagination-list__item
+							a.pagination-list__link(href="#") 2 
+						li.pagination-list__item.active
+							span.pagination-list__link 3 
+						li.pagination-list__item
+							a.pagination-list__link(href="#") 4 
+						li.pagination-list__item
+							a.pagination-list__link(href="#") 5 
+						li.pagination-list__item.next
+							a.pagination-list__link(href="#"): span.ic.ic_arrow
+					p.pagination__text из 3845
+								
+
+
+
+				div.banner.banner_horizontal
+						a(href="#"): span.banner__title advertising
+				
+
+		// CONTENT EOF	
+
+		include include/footer
+
+	div.block-pof
+
+	include include/popup
+	// BODY EOF  
+
+

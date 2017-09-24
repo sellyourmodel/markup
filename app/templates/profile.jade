@@ -1,0 +1,428 @@
+extends include/templates
+block title
+	title SELLYOURMODELS - Профиль
+block content	
+	// BEGIN BODY 
+
+	div.main-wrapper
+
+		include include/header
+
+		// BEGIN CONTENT 
+
+		main.content
+			div.wrapper
+				div.wrapper-column.clearfix
+					aside.fl.column.bg 
+						div.profile
+							div.profile-cont
+								div.profile__avatar 
+									img(src="img/user-avatar.png", alt="")
+								h3 Nikname 
+									i.ic.ic_models-two
+								p.profile__text Veronika Khoreva <br> Россия, г. Екатеринбург
+
+								button.button.button_warning.button_block Отправить сообшение
+							div.profile-cont
+								h6.profile-cont__title Специализация:
+								p.profile-cont__text Архитектура, Дизайн интерьера, Дизайн выставок
+
+							div.profile-cont
+								h6.profile-cont__title О себе:
+								p.profile-cont__text Hello! <br> I'm a jewelry designer. Have a 5 years of experience. <br> You can check all my works here: <span class="p-link">http://www.jewellery-3dmodels.com</span>
+							div.profile-cont
+								h6.profile-cont__title Веб-ссылки:
+								ul.web-link-list
+									li.web-link-list__item
+										a.web-link-list__link(href="#") Clive Wilkinson Architects
+								ul.social
+									li.social__item 
+										a.social__link.social__link_fb(href="#"): i.fa.fa-facebook
+									li.social__item 
+										a.social__link.social__link_tw(href="#"): i.fa.fa-twitter
+
+							div.profile-cont
+								h6.profile-cont__title Дата регистрации:
+								p.profile-cont__text 10-10-2016
+								
+					div.content-wrap.tab-wrap.column.bg
+						div.main-wrap
+							
+							div.main-wrap__header
+								ul.nav-tabs-list.tabs
+									li.nav-tabs-list__item.js-hide-bg.active             
+										a.nav-tabs-list__link.link(href="#tab_1") Модели (4)
+									li.nav-tabs-list__item.js-hide-bg
+										a.nav-tabs-list__link.link(href="#tab_2") Галерея (0)
+									li.nav-tabs-list__item.js-show-bg
+										a.nav-tabs-list__link.link(href="#tab_3") Статистика
+									li.nav-tabs-list__item.js-hide-bg
+										a.nav-tabs-list__link.link(href="#tab_4") Избранное
+									li.nav-tabs-list__item.js-show-bg
+										a.nav-tabs-list__link.link(href="#tab_5") Покупки (0)
+
+
+						div.box-tab-cont
+							div.tab-cont#tab_1 
+								ul.product-list.col-4.sm
+									li.product-list__item
+										div.product-list__img
+											a.fancybox(href="#product"): img(src="img/product-img1.png", alt="")
+										div.product-list__cont
+											h6.product-list__title: a(href="#") Editorial Illustrations #2
+											div.product-panel
+												span.author от:
+													a(href="#") Si Maclencel 
+													span.ic.ic_models-two
+												span.product-panel__item
+													span.product-panel__icon
+														i.product-panel__icon-icon.product-panel__icon-icon__downloads
+														span 50
+													span.product-panel__icon
+														i.product-panel__icon-icon.product-panel__icon-icon__comments
+														span 10
+													span.product-panel__icon
+														i.product-panel__icon-icon.product-panel__icon-icon__stars
+														span 20
+
+									li.product-list__item
+										div.product-list__img
+											a.fancybox(href="#product"): img(src="img/product-img2.png", alt="")
+											div.panel
+												span.panel__item.panel__item_corona: span.ic.ic_corona
+										div.product-list__cont
+											h6.product-list__title: a(href="#") Editorial Illustrations #2
+											div.product-panel
+												span.author от:
+													a(href="#") Si Maclencel 
+													span.ic.ic_models-two
+												span.product-panel__item
+													span.product-panel__icon
+														i.product-panel__icon-icon.product-panel__icon-icon__downloads
+														span 50
+													span.product-panel__icon
+														i.product-panel__icon-icon.product-panel__icon-icon__comments
+														span 10
+													span.product-panel__icon
+														i.product-panel__icon-icon.product-panel__icon-icon__stars
+														span 20
+
+									li.product-list__item
+										div.product-list__img
+											a.fancybox(href="#product"): img(src="img/product-img5.png", alt="")
+											div.panel
+												span.panel__item.panel__item_play: span.ic.ic_play
+												span.panel__item.panel__item_corona: span.ic.ic_corona
+											div.panel.panel_top
+												span.panel__item.panel__item_ss: span ss
+										div.product-list__cont
+											h6.product-list__title: a(href="#") Editorial Illustrations #2
+											div.product-panel
+												span.author от:
+													a(href="#") Si Maclencel 
+													span.ic.ic_models-two
+												span.product-panel__item
+													span.product-panel__icon
+														i.product-panel__icon-icon.product-panel__icon-icon__downloads
+														span 50
+													span.product-panel__icon
+														i.product-panel__icon-icon.product-panel__icon-icon__comments
+														span 10
+													span.product-panel__icon
+														i.product-panel__icon-icon.product-panel__icon-icon__stars
+														span 20
+
+									li.product-list__item
+										div.product-list__img
+											a.fancybox(href="#product"): img(src="img/product-img3.png", alt="")
+											
+										div.product-list__cont
+											h6.product-list__title: a(href="#") Editorial Illustrations #2
+											div.product-panel
+												span.author от:
+													a(href="#") Si Maclencel 
+													span.ic.ic_models-one
+												span.product-panel__item
+													span.product-panel__icon
+														i.product-panel__icon-icon.product-panel__icon-icon__downloads
+														span 50
+													span.product-panel__icon
+														i.product-panel__icon-icon.product-panel__icon-icon__comments
+														span 10
+													span.product-panel__icon
+														i.product-panel__icon-icon.product-panel__icon-icon__stars
+														span 20
+
+							div.tab-cont.hide#tab_2 
+								ul.product-list.col-4.sm
+
+									li.product-list__item
+										div.product-list__img
+											a.fancybox(href="#product"): img(src="img/product-img2.png", alt="")
+											div.panel
+												span.panel__item.panel__item_corona: span.ic.ic_corona
+										div.product-list__cont
+											h6.product-list__title: a(href="#") Editorial Illustrations #2
+											div.product-panel
+												span.author от:
+													a(href="#") Si Maclencel 
+													span.ic.ic_models-two
+												span.product-panel__item
+													span.product-panel__icon
+														i.product-panel__icon-icon.product-panel__icon-icon__downloads
+														span 50
+													span.product-panel__icon
+														i.product-panel__icon-icon.product-panel__icon-icon__comments
+														span 10
+													span.product-panel__icon
+														i.product-panel__icon-icon.product-panel__icon-icon__stars
+														span 20
+
+									li.product-list__item
+										div.product-list__img
+											a.fancybox(href="#product"): img(src="img/product-img5.png", alt="")
+											div.panel
+												span.panel__item.panel__item_play: span.ic.ic_play
+												span.panel__item.panel__item_corona: span.ic.ic_corona
+											div.panel.panel_top
+												span.panel__item.panel__item_ss: span ss
+										div.product-list__cont
+											h6.product-list__title: a(href="#") Editorial Illustrations #2
+											div.product-panel
+												span.author от:
+													a(href="#") Si Maclencel 
+													span.ic.ic_models-two
+												span.product-panel__item
+													span.product-panel__icon
+														i.product-panel__icon-icon.product-panel__icon-icon__downloads
+														span 50
+													span.product-panel__icon
+														i.product-panel__icon-icon.product-panel__icon-icon__comments
+														span 10
+													span.product-panel__icon
+														i.product-panel__icon-icon.product-panel__icon-icon__stars
+														span 20
+
+									li.product-list__item
+										div.product-list__img
+											a.fancybox(href="#product"): img(src="img/product-img3.png", alt="")
+											
+										div.product-list__cont
+											h6.product-list__title: a(href="#") Editorial Illustrations #2
+											div.product-panel
+												span.author от:
+													a(href="#") Si Maclencel 
+													span.ic.ic_models-one
+												span.product-panel__item
+													span.product-panel__icon
+														i.product-panel__icon-icon.product-panel__icon-icon__downloads
+														span 50
+													span.product-panel__icon
+														i.product-panel__icon-icon.product-panel__icon-icon__comments
+														span 10
+													span.product-panel__icon
+														i.product-panel__icon-icon.product-panel__icon-icon__stars
+														span 20
+							div.tab-cont.hide#tab_3 
+								div.block-title
+									h4 Загруженно моделей  10
+								div.tab-cont__body
+									h4 Текущие продажи
+
+									table.table 
+										tr 
+											th.td-date Дата
+											th Опереация
+											th.td-summa На сумму
+										tr 
+											td 10.04.16
+											td Продажа модели "Название модели"
+											td 100
+										tr 
+											td 10.04.16
+											td Продажа модели "Название модели"
+											td 100
+										tr 
+											td 10.04.16
+											td Продажа модели "Название модели"
+											td 100
+
+									p: a.link(href="#") Смотреть все транзакции
+
+									dl.box-label.small
+										dt.box-label__title Ваш баланс  с продаж $10
+										dd.box-label__cont Общие продажи $100
+								div.tab-cont__footer
+									h4 Покупка моделей
+									dl.box-label.small.mt10
+										dt.box-label__title Доступно 19 моделей
+										dd.box-label__cont
+											a.link(href="#") Купить модели
+											a.link(href="#") Все покупки
+
+							div.tab-cont.hide#tab_4 
+								ul.product-list.col-4.sm
+									li.product-list__item
+										div.product-list__img
+											a.fancybox(href="#product"): img(src="img/product-img1.png", alt="")
+										div.product-list__cont
+											h6.product-list__title: a(href="#") Editorial Illustrations #2
+											div.product-panel
+												span.author от:
+													a(href="#") Si Maclencel 
+													span.ic.ic_models-two
+												span.product-panel__item
+													span.product-panel__icon
+														i.product-panel__icon-icon.product-panel__icon-icon__downloads
+														span 50
+													span.product-panel__icon
+														i.product-panel__icon-icon.product-panel__icon-icon__comments
+														span 10
+													span.product-panel__icon
+														i.product-panel__icon-icon.product-panel__icon-icon__stars
+														span 20
+
+									li.product-list__item
+										div.product-list__img
+											a.fancybox(href="#product"): img(src="img/product-img2.png", alt="")
+											div.panel
+												span.panel__item.panel__item_corona: span.ic.ic_corona
+										div.product-list__cont
+											h6.product-list__title: a(href="#") Editorial Illustrations #2
+											div.product-panel
+												span.author от:
+													a(href="#") Si Maclencel 
+													span.ic.ic_models-two
+												span.product-panel__item
+													span.product-panel__icon
+														i.product-panel__icon-icon.product-panel__icon-icon__downloads
+														span 50
+													span.product-panel__icon
+														i.product-panel__icon-icon.product-panel__icon-icon__comments
+														span 10
+													span.product-panel__icon
+														i.product-panel__icon-icon.product-panel__icon-icon__stars
+														span 20
+
+									li.product-list__item
+										div.product-list__img
+											a.fancybox(href="#product"): img(src="img/product-img5.png", alt="")
+											div.panel
+												span.panel__item.panel__item_play: span.ic.ic_play
+												span.panel__item.panel__item_corona: span.ic.ic_corona
+											div.panel.panel_top
+												span.panel__item.panel__item_ss: span ss
+										div.product-list__cont
+											h6.product-list__title: a(href="#") Editorial Illustrations #2
+											div.product-panel
+												span.author от:
+													a(href="#") Si Maclencel 
+													span.ic.ic_models-two
+												span.product-panel__item
+													span.product-panel__icon
+														i.product-panel__icon-icon.product-panel__icon-icon__downloads
+														span 50
+													span.product-panel__icon
+														i.product-panel__icon-icon.product-panel__icon-icon__comments
+														span 10
+													span.product-panel__icon
+														i.product-panel__icon-icon.product-panel__icon-icon__stars
+														span 20
+
+									li.product-list__item
+										div.product-list__img
+											a.fancybox(href="#product"): img(src="img/product-img3.png", alt="")
+										div.product-list__cont
+											h6.product-list__title: a(href="#") Editorial Illustrations #2
+											div.product-panel
+												span.author от:
+													a(href="#") Si Maclencel 
+													span.ic.ic_models-one
+												span.product-panel__item
+													span.product-panel__icon
+														i.product-panel__icon-icon.product-panel__icon-icon__downloads
+														span 50
+													span.product-panel__icon
+														i.product-panel__icon-icon.product-panel__icon-icon__comments
+														span 10
+													span.product-panel__icon
+														i.product-panel__icon-icon.product-panel__icon-icon__stars
+														span 20
+									li.product-list__item
+										div.product-list__img
+											a.fancybox(href="#product"): img(src="img/product-img3.png", alt="")
+											
+										div.product-list__cont
+											h6.product-list__title: a(href="#") Editorial Illustrations #2
+											div.product-panel
+												span.author от:
+													a(href="#") Si Maclencel 
+													span.ic.ic_models-one
+												span.product-panel__item
+													span.product-panel__icon
+														i.product-panel__icon-icon.product-panel__icon-icon__downloads
+														span 50
+													span.product-panel__icon
+														i.product-panel__icon-icon.product-panel__icon-icon__comments
+														span 10
+													span.product-panel__icon
+														i.product-panel__icon-icon.product-panel__icon-icon__stars
+														span 20
+									li.product-list__item
+										div.product-list__img
+											a.fancybox(href="#product"): img(src="img/product-img3.png", alt="")
+											
+										div.product-list__cont
+											h6.product-list__title: a(href="#") Editorial Illustrations #2
+											div.product-panel
+												span.author от:
+													a(href="#") Si Maclencel 
+													span.ic.ic_models-one
+												span.product-panel__item
+													span.product-panel__icon
+														i.product-panel__icon-icon.product-panel__icon-icon__downloads
+														span 50
+													span.product-panel__icon
+														i.product-panel__icon-icon.product-panel__icon-icon__comments
+														span 10
+													span.product-panel__icon
+														i.product-panel__icon-icon.product-panel__icon-icon__stars
+														span 20
+									li.product-list__item
+										div.product-list__img
+											a.fancybox(href="#product"): img(src="img/product-img3.png", alt="")
+											
+										div.product-list__cont
+											h6.product-list__title: a(href="#") Editorial Illustrations #2
+											div.product-panel
+												span.author от:
+													a(href="#") Si Maclencel 
+													span.ic.ic_models-one
+												span.product-panel__item
+													span.product-panel__icon
+														i.product-panel__icon-icon.product-panel__icon-icon__downloads
+														span 50
+													span.product-panel__icon
+														i.product-panel__icon-icon.product-panel__icon-icon__comments
+														span 10
+													span.product-panel__icon
+														i.product-panel__icon-icon.product-panel__icon-icon__stars
+														span 20
+							div.tab-cont.hide#tab_5
+								div.tab-cont__body
+									h4 Мои покупки
+				div.banner.banner_horizontal
+						a(href="#"): span.banner__title advertising
+				
+
+		// CONTENT EOF	
+
+		include include/footer
+
+	div.block-pof
+
+	include include/popup
+
+	// BODY EOF  
+
+

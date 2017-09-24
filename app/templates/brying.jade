@@ -1,0 +1,91 @@
+extends include/templates
+block title
+	title SELLYOURMODELS - Покупка моделей
+block content	
+	// BEGIN BODY 
+
+	div.main-wrapper
+
+		include include/header
+
+		// BEGIN CONTENT 
+
+		main.content
+			div.wrapper
+				div.main-wrap
+					div.main-wrap__header
+						h1 Покупка моделей
+					div.wrap
+						
+						div.wrap-right 
+							h4.wrap__title Полезная информация
+							ol.list
+								li Минимальное колличество покупки - 2 PRO.
+								li PRO начисляется единовременно и не имеет ограничения во времени скачивания.
+								li 30 FREE начисляется каждый день в рамках оплаченного срока.
+								li При оплате через терминалы и другие оффлайн способы - срок получения доступа может достигать 3-х дней.
+								li Оплата с помощью банковской карты - только для стран СНГ.
+								li Оплата через терминалы - только для России.
+								li В случае утери pro-модели или неудачном скачаивании - восстановить её в истории покупок.
+								li Если у вас уже есть PRO-доступы - последуюшая покупка суммируется.
+								li Для корпоративных клиентов. Минимальный заказ 1000 доступов PROFI. Оформление договора и безналичный расчет. Для уточнения деталей обращайтесь в службу поддержки.
+								li Служба поддержки. При обращении обязательно указывайте номер заказа!
+							ol.list 
+								li Минимальное колличество покупки - 2 PRO.
+								li PRO начисляется единовременно и не имеет ограничения во времени скачивания.
+							ol.list
+								li Минимальное колличество покупки - 2 PRO.
+								li PRO начисляется единовременно и не имеет ограничения во времени скачивания.
+								li 30 FREE начисляется каждый день в рамках оплаченного срока.
+								li При оплате через терминалы и другие оффлайн способы - срок получения доступа может достигать 3-х дней.
+								li Оплата с помощью банковской карты - только для стран СНГ.
+								li Оплата через терминалы - только для России.
+								li В случае утери pro-модели или неудачном скачаивании - восстановить её в истории покупок.
+								li Если у вас уже есть PRO-доступы - последуюшая покупка суммируется.
+								li Для корпоративных клиентов. Минимальный заказ 1000 доступов PROFI. Оформление договора и безналичный расчет. Для уточнения деталей обращайтесь в службу поддержки.
+								li Служба поддержки. При обращении обязательно указывайте номер заказа!
+						
+						div.wrap-left 
+							p Хотите делать покупки гораздо быстрей? Купите предоплачиваемые Кредиты и скачивайте товары по одному клику! <br> Сколько Кредитов вы хотите купить?
+
+							p Депозит производится в $USD долларах и не подлежит возврату. Купленные Кредиты вы сможете использовать только для покупки товаров в сети магазинов NetrinoMedia!
+
+
+							div.box-form.payment 
+								form(action="#")
+									dl.box-label
+										dt.box-label__title Доступно 3d моделей
+										dd.box-label__cont 0
+										dt.box-label__title.mb25 Выберите количество покупаемых 3d моделей:
+										dd.box-label__cont.mb25: input.box-label__input(type="text", value="10")
+										dt.box-label__title.mb25 Сумма заказа:
+										dd.box-label__cont.mb25: span.count $10
+									
+									div.box-field.checkbox.mb20
+										div.box-field__input
+											input.styler(type="checkbox", id="check_1")
+											label.box-field__label(for="check_1") Я согласен с 
+												a.link(href="#") пользовательским <br> соглашением
+									
+									h4.box-form__title Выберите способ оплаты
+									div.payment__button-group
+										button.button.button_warning.button_block(type="button") Купить через PayPal
+										button.button.button_warning.button_block(type="button") Купить через  WebMoney
+									div.payment__method
+										img(src="img/payment.jpg", alt="")
+
+				div.banner.banner_horizontal
+						a(href="#"): span.banner__title advertising
+				
+
+		// CONTENT EOF	
+
+		include include/footer
+
+	div.block-pof
+
+	include include/popup
+
+	// BODY EOF  
+
+

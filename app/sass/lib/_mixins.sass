@@ -1,0 +1,273 @@
+=box
+	+box-sizing(border-box)
+
+// Счетчит для ol
+=counter($var)
+	counter-reset: $var
+	> li
+		&:before
+			content: counter($var)
+			counter-increment: $var
+
+// Calc (свйство, значение)
+=calc($property, $expression)
+	#{$property}: -moz-calc(#{$expression})
+	#{$property}: -webkit-calc(#{$expression})
+	#{$property}: calc(#{$expression})
+	
+=coverdiv
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+
+=vcenter
+	position: absolute
+	top: 50%
+	left: 50%
+	+translate(-50%,-50%)
+
+=hcenter
+	position: absolute
+	top: 50%
+	+translate(0,-50%)
+
+// выравненвание инлайновых элементов по ширине
+=justify
+	text-align: justify
+	line-height: 0
+	font-size: 0
+	text-justify: newspaper
+	zoom: 1
+	text-align-last: justify
+	&:after
+		content: ""
+		display: inline-block
+		width: 100%
+		height: 0px
+		visibility: hidden
+		overflow: hidden
+
+// Выравневание блока по вертикали
+=vertical
+	text-align: center
+	font-size: 0
+	&:before
+		content: ""
+		display: inline-block
+		vertical-align: middle
+		width: 0
+		height: 100%
+
+//  clearfix
+=clr
+	&:after
+		content: " "
+		display: table
+		clear: both
+	*zoom: 1
+
+// Указываем цвет placeholder (цвет)
+=placeholder-color($color)
+	&:-moz-placeholder,
+	&::-moz-placeholder
+		color: $color
+		opacity: 1
+	&::-webkit-input-placeholder
+		color: $color
+
+// Указываем стили для placeholder
+=placeholder
+	&:-ms-input-placeholder
+		@content
+	&:-moz-placeholder
+		@content
+	&::-moz-placeholder
+		@content
+	&::-webkit-input-placeholder
+		@content
+	&::placeholder
+		@content
+
+// triangle (ширина, высота, фон, направление стрелки)
+=arr($width, $height, $bg, $direction)
+	width: 0px
+	height: 0px
+	border-style: solid
+	@if $direction == t
+		border-width: 0 $width / 2 + px $height + px $width / 2 + px
+		border-color: transparent transparent $bg transparent
+	@if $direction == r
+		border-width: $height / 2 + px 0 $height / 2 + px $width + px
+		border-color: transparent transparent transparent $bg
+	@if $direction == b
+		border-width: $height + px $width / 2 + px 0 $width / 2 + px
+		border-color: $bg transparent transparent transparent
+	@if $direction == l
+		border-width: $height / 2 + px $width + px $height / 2 + px 0
+		border-color: transparent $bg transparent transparent
+	@if $direction == tl
+		border-width: $height + px $width + px 0 0
+		border-color: $bg transparent transparent transparent
+	@if $direction == tr
+		border-width: 0 $width + px $height + px 0
+		border-color: transparent $bg transparent transparent
+	@if $direction == br
+		border-width: 0 0 $height + px $width + px
+		border-color: transparent transparent $bg transparent
+	@if $direction == bl
+		border-width: $height + px 0 0 $width + px
+		border-color: transparent transparent transparent $bg
+
+// Подключени шрифтов (Название шрифта, название файла)
+=font($alias, $name)
+	@font-face
+		font-family: $alias
+		src: url("../fonts/" + $name + ".eot")
+		src: url("../fonts/" + $name + ".eot?#iefix") format("embedded-opentype"), url("../fonts/" + $name + ".woff2") format('woff2'), url("../fonts/" + $name + ".woff") format("woff"), url("../fonts/" + $name + ".ttf") format("truetype"), url("../fonts/" + $name + ".svg#" + $name + "") format("svg")
+		@content
+
+
+// Убераем размытие текста (antialiased)
+=font-smoothing($val: antialiased)
+	-webkit-font-smoothing: $val
+	-moz-font-smoothing: $val
+	-ms-font-smoothing: $val
+	-o-font-smoothing: $val
+
+// Скрываем текст и показываем 3 точки
+=text-overflow
+	overflow: hidden
+	-ms-text-overflow: ellipsis
+	text-overflow: ellipsis
+	white-space: nowrap
+
+=selection
+	& ::selection
+		@content
+	& ::-moz-selection
+		@content
+
+=size($width: 100%, $height: 100%)
+	-moz-background-size: $width $height
+	-webkit-background-size: $width $height
+	background-size: $width $height
+
+=cover
+	background-repeat: no-repeat
+	-webkit-background-size: cover
+	-moz-background-size: cover
+	-o-background-size: cover
+	background-size: cover
+	background-position: 50% 50%
+
+// Градиент слева на право (цвет 1, цвет 2)
+=g($color1, $color2)
+	+background-image(linear-gradient($color1, $color2))
+
+// Градиент сверху вниз (цвет 1, цвет 2)
+=gh($color1, $color2)
+	+background-image(linear-gradient(left, $color1, $color2))
+
+// CSS 3 
+=tr($what)
+	-moz-transition: $what
+	-o-transition: $what
+	-webkit-transition: $what
+	-ms-transition: $what
+	transition: $what
+
+=rotate($var)
+	-ms-transform: rotate($var+deg)
+	-webkit-transform: rotate($var+deg)
+	transform: rotate($var+deg)
+
+=blur($var)
+	-webkit-filter: blur($var)
+	-moz-filter: blur($var)
+	-ms-filter: blur($var)
+	filter: blur($var)
+	
+=scale($var)
+	-ms-transform: scale($var)
+	-webkit-transform: scale($var)
+	transform: scale($var)
+
+=br($radius) 
+	-webkit-border-radius: $radius
+	-moz-border-radius: $radius 
+	border-radius: $radius
+	
+=bs($bshadow)
+	-webkit-box-shadow: $bshadow
+	-moz-box-shadow: $bshadow
+	box-shadow: $bshadow
+
+=ts($string) 
+	-webkit-text-shadow: $string
+	-moz-text-shadow: $string
+	text-shadow: $string
+			
+=opacity($trans)
+	-moz-opacity: $trans
+	-khtml-opacity: $trans
+	opacity: $trans
+	filter: alpha(opactiy=($trans * 100))
+
+// Оформление checkbox и radio на чистом css
+=check($width, $height, $png)   
+	position: absolute
+	clip: rect(0, 0, 0, 0)
+	&:checked + label:after 
+		background-position: 0 (-$height)
+	& + label 
+		cursor: pointer
+		&:after 
+			content: " "
+			display: inline-block
+			position: relative
+			top: 2px
+			height: $height
+			width: $width
+			margin-right: 10px
+			background: url(../img/#{$png}.png) no-repeat center top
+
+
+// Горизонтальное выравневание инлайновых блоков
+=bl_l($width, $position)
+	position: relative
+	z-index: 2
+	display: inline-block
+	vertical-align: $position
+	width: $width
+	margin-right: -4px
+
+=bl_r($offset-left, $indent, $position)
+	display: inline-block
+	vertical-align: $position
+	width: 100%
+	margin-left: - $offset-left
+	margin-right: -4px
+	padding-left: $offset-left + $indent
+
+=inverse-bl_r($width, $position)
+	position: relative
+	z-index: 2
+	display: inline-block
+	vertical-align: $position
+	width: $width
+	margin-right: -4px
+
+=inverse-bl_l($offset-left, $indent, $position)
+	display: inline-block
+	vertical-align: $position
+	width: 100%
+	margin-right: - $offset-left
+	padding-right: $offset-left + $indent
+
+// retina, also available as +hdpi
+=retina
+	@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2)
+		@content
+

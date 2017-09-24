@@ -1,0 +1,143 @@
+extends include/templates
+block title
+	title SELLYOURMODELS - Модель
+block content	
+	// BEGIN BODY 
+
+	div.main-wrapper
+
+		include include/header
+
+		// BEGIN CONTENT 
+
+		main.content
+			div.wrapper
+				div.main-wrap
+					div.box-breadcrumbs
+						ul.breadcrumbs-list
+							li.breadcrumbs-list__item
+								a.breadcrumbs-list__link(href="#") Мебель
+							li.breadcrumbs-list__item
+								a.breadcrumbs-list__link(href="#") Диваны
+							li.breadcrumbs-list__item
+								span Easy chairs 
+					div.wrap.product
+						div.wrap-right 
+							div.product-info
+								div.panel.panel_top
+									span.panel__item.panel__item_corona: span.ic.ic_corona
+									span.panel__item.panel__item_ss: span ss
+								span.author от:
+									a(href="#") Si Maclencel 
+									span.ic.ic_models-one
+								h1 Name Editorial Illustrations #2
+								a.link(href="#") Производитель (если есть)
+
+								ul.link-list
+									li.link-list__item
+										a.link-list__link.link(href="#") Современный дизайн
+									li.link-list__item
+										a.link-list__link.link(href="#") Геометрический дизайн
+
+								p.
+									Описание подвесная полка с цветами <br>
+									Выполнена Unwrap UVW развертка <br>
+									Cтек не заперт, для ближних планов необходи-<br>мо...
+
+								p 3dsMax 2014 , fbx,  Vray, Corona
+
+
+								ul.tags-list
+									li.tags-list__item
+										a.tags-list__link(href="#") цветок
+										span ,
+									li.tags-list__item
+										a.tags-list__link(href="#") полка
+										span ,
+									li.tags-list__item
+										a.tags-list__link(href="#") лимон
+										span ,
+									li.tags-list__item
+										a.tags-list__link(href="#") шеффлера
+										span ,
+									li.tags-list__item
+										a.tags-list__link(href="#") сансевиерия
+										span ,
+									li.tags-list__item
+										a.tags-list__link(href="#") хлорофитум
+										span ,
+									li.tags-list__item
+										a.tags-list__link(href="#") пеперомия
+										span ,
+								
+								div.box-rating.rating
+									span.rating__count 24
+									input(class="star required" type="radio" name="test-4-rating-5" value="1")
+									input(class="star" type="radio" name="test-4-rating-5" value="2")
+									input(class="star" type="radio" name="test-4-rating-5" value="3")
+									input(class="star" type="radio" name="test-4-rating-5" value="4")
+									input(class="star" type="radio" name="test-4-rating-5" value="5")
+
+								div.link-group 
+									a.link(href="#") В избранное
+									a.link(href="#") Поделиться
+
+								div.box-button
+									a.button.button_warning.button_lg(href="#", download="") Скачать
+									span.button-info Доступно моделей 
+										span - 10
+
+						div.wrap-left 	
+							div.product-slider
+								div.slider-for
+									div.slider-for__item
+										img(src="img/product-slider-img-1.png", alt="")
+									div.slider-for__item
+										img(src="img/product-slider-img-2.png", alt="")
+									div.slider-for__item
+										img(src="img/product-slider-img-3.png", alt="")
+									div.slider-for__item
+										<iframe width="560" height="315" src="https://www.youtube.com/embed/qRP-KP4b23Y"  allowfullscreen></iframe>
+								div.slider-nav 
+									div.slider-nav__item
+										img(src="img/product-slider-img-1.png", alt="")
+									div.slider-nav__item
+										img(src="img/product-slider-img-2.png", alt="")
+									div.slider-nav__item
+										img(src="img/product-slider-img-3.png", alt="")
+									div.slider-nav__item.video
+										img(src="img/product-slider-img-1.png", alt="")
+
+							div.box-comment
+								h4 Комментарии (16)
+								div.comment
+									div.box-top
+										div.box-top__avatar  
+											a(href="#"): img(src="img/article-avatar.png", alt="")
+										div.box-top__cont
+											span.author
+												a(href="#") Ejevich_
+												span.date 2016.09.12 01:15
+
+											p Шикарная модель!
+
+											a.link.link_warning(href="#") Ответить
+											
+									
+												
+												
+				div.banner.banner_horizontal
+						a(href="#"): span.banner__title advertising
+				
+
+		// CONTENT EOF	
+
+		include include/footer
+
+	div.block-pof
+
+	include include/popup
+
+	// BODY EOF  
+
+

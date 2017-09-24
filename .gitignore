@@ -1,0 +1,17 @@
+/web/
+/composer.phar
+
+# PHPUnit
+/app/phpunit.xml
+/phpunit.xml
+
+# IDE, Mac AND PHP Settings
+.idea
+php.ini
+.DS_Store
+*.php~
+composer.phar
+node_modules
+
+/local/
+dist

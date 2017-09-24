@@ -1,0 +1,178 @@
+extends include/templates
+block title
+	title SELLYOURMODELS - Настройки
+block content	
+	// BEGIN BODY 
+
+	div.main-wrapper
+
+		include include/header
+
+		// BEGIN CONTENT 
+
+		main.content
+			div.wrapper
+				div.main-wrap
+					div.main-wrap__header
+						h1 Настройки
+					div.wrap.wrap_small
+
+						div.wrap-right
+							ul.wrap-list
+								li.wrap-list__item: a.wrap-list__link(href="#") Сменить пароль
+								li.wrap-list__item: a.wrap-list__link(href="#") Соц. профайлы
+
+						div.wrap-left 
+							
+							div.box-form.settings
+								form(action="#")
+									div.box-field.col-3
+										label.box-field__label Пользователь
+										div.box-field__input
+											input.form-control(type="text")
+									
+									div.box-field-group.user
+										label.box-field__label Аватар
+										div.box-field.col-1
+											div.user__avatar
+												img(src="img/user-avatar.png", alt="")
+										div.box-field.col-5
+											div.user__add-avatar
+												div.box-field__input
+													input.styler(type="file", data-placeholder="Фаил невыбран", data-browse="Выберите фаил")
+												div.box-field__input
+													button.button.button_warning(type="button") Изменить
+													span.help-text.inline Максимально допустимый размер 100x100px
+
+									div.box-field-group
+										div.box-field.col-3
+											label.box-field__label Имя
+											div.box-field__input
+												input.form-control(type="text")
+										div.box-field.col-3
+											label.box-field__label Фамилия
+											div.box-field__input
+												input.form-control(type="text")
+										div.box-field.col-3
+											label.box-field__label Дата рождения
+											div.box-field__input
+												div.box-select-group
+													select.styler.col-3(data-placeholder="DD", data-visible-options="10")
+														option
+														option(value="1") 01
+														option(value="2") 02
+														option(value="1") 03
+														option(value="2") 04
+														option(value="1") 05
+														option(value="2") 06
+														option(value="1") 07
+														option(value="2") 08
+														option(value="1") 09
+														option(value="2") 10
+														option(value="1") 11
+														option(value="2") 12
+														option(value="1") 13
+														option(value="2") 14
+														option(value="1") 15
+														option(value="2") 16
+														option(value="1") 17
+														option(value="2") 18
+														option(value="1") 19
+														option(value="2") 20
+														option(value="1") 21
+														option(value="2") 22
+														option(value="1") 23
+														option(value="2") 24
+														option(value="1") 25
+														option(value="2") 26
+														option(value="1") 27
+														option(value="2") 28
+														option(value="1") 29
+														option(value="2") 30
+														option(value="1") 31
+
+													select.styler.col-3(data-placeholder="ММ", data-visible-options="10")
+														option(value="")
+														option(value="1") 01
+														option(value="2") 02
+													select.styler.col-3(data-placeholder="YY", data-visible-options="10")
+														option(value="")
+														option(value="1") 2015
+														option(value="2") 2016
+												
+
+									div.box-field.col-4
+										label.box-field__label E-mail
+										div.box-field__input
+											input.form-control(type="email")
+
+									div.box-field.col-1
+										label.box-field__label Пол
+										div.box-field__input
+											select.styler.form-control(data-placeholder=" ")
+												option(value="")
+												option(value="1") Мужской
+												option(value="2") Женский
+
+									div.box-field-group
+										div.box-field.col-2
+											label.box-field__label Язык
+											div.box-field__input
+												select.styler.form-control(data-placeholder=" ")
+													option(value="")
+													option(value="1") Русский
+													option(value="2") Украинский
+										div.box-field.col-2
+											label.box-field__label Язык
+											div.box-field__input
+												select.styler.form-control(data-placeholder=" ")
+													option(value="")
+													option(value="1") Русский
+													option(value="2") Украинский
+									
+									div.box-field.col-5
+										label.box-field__label Специализация:
+										div.box-field__input
+											input.form-control(type="text")
+
+									div.box-field-group
+										label.box-field__label Место проживания
+										div.box-field.col-2
+											div.box-field__input
+												select.styler.form-control(data-placeholder="Страна")
+													option(value="")
+													option(value="1") Россия
+													option(value="2") Украина
+										div.box-field.col-2
+											div.box-field__input
+												select.styler.form-control(data-placeholder="Город")
+													option(value="")
+													option(value="1") Россия
+													option(value="2") Украина
+
+									div.box-field.col-5
+										label.box-field__label  О себе:
+										div.box-field__input
+											textarea.form-control
+					
+									div.settings-buttons-form
+										img(src="img/buttons.png", alt="")
+		
+									button.button.button_warning(type="submit") Изменить
+									
+							
+				div.banner.banner_horizontal
+						a(href="#"): span.banner__title advertising
+				
+
+		// CONTENT EOF	
+
+		include include/footer
+
+	div.block-pof
+
+	include include/popup
+
+	// BODY EOF  
+
+

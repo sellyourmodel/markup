@@ -1,0 +1,199 @@
+// BEGIN HEADER
+
+header
+	div.wrapper
+		div.header-top
+			a.logo(href="#")
+				img.logo__svg(src="img/svg/logo.svg")
+			nav.box-nav-list
+				ul.nav-list.unstyled
+					li.nav-list__item: a.nav-list__link(href="#"): span О нас
+					li.nav-list__item: a.nav-list__link(href="#"): span Продавайте 3D модели
+					li.nav-list__item: a.nav-list__link(href="#"): span Сообщество
+					li.nav-list__item: a.nav-list__link(href="#"): span Поддержка
+					li.nav-list__item
+						a.nav-list__link.arrow-down.js-link-open(href="#", data-target="#box-lang")
+							span Язык:
+							span.nav-list__icon: span.ic.ic_flag-ru
+						ul.lang-list.unstyled.js-open-block#box-lang
+							li.lang-list__item: a.lang-list__link(href="#") 
+								span.ic.ic_flag-ru
+							li.lang-list__item: a.lang-list__link(href="#") 
+								span.ic.ic_flag-en
+                                     
+		div.header-bottom
+			div.header-table
+				a.header-table__item.js-link-open.models(href="#", data-target="#nav")
+					span.models__text.arrow-down 3D models
+				div.header-table__item.search
+					form 
+						input.search__input.form-control(type="text", placeholder="Поиск")
+						input.search__button(type="submit", value="")
+				
+				a.header-table__item.link-login.fancybox(href="#login"): span Войти 
+				a.header-table__item.link-registr(href="#"): span Регистрация
+				
+				a.header-table__item.add-models.hidden(href="#")
+					span Add 3d model
+				div.header-table__item.mini-profile.hidden
+					a.mini-profile__img(href="#"): img(src="img/user.png", alt="")
+					a.mini-profile__link.js-link-open(href="#", data-target="#nav-profile") 
+						span.arrow-down Alexander
+							span.ic.ic_models-two
+
+			div#nav.navigation.js-open-block
+				div.navigation-table
+					div.navigation-table__cell
+						h4.navigation__title Мебель
+						ul.navigation-list.unstyled
+							li.navigation-list__item: a.navigation-list__link(href="#") Шкафы (Shelves and storage)
+							li.navigation-list__item: a.navigation-list__link(href="#") Диваны
+							li.navigation-list__item: a.navigation-list__link(href="#") Сидения
+							li.navigation-list__item: a.navigation-list__link(href="#") Столы
+							li.navigation-list__item: a.navigation-list__link(href="#") Кровати
+						h4.navigation__title Ванная
+						ul.navigation-list.unstyled
+							li.navigation-list__item: a.navigation-list__link(href="#") Умывальники
+							li.navigation-list__item: a.navigation-list__link(href="#") Унитазы и биде
+							li.navigation-list__item: a.navigation-list__link(href="#") Ванны и душевые кабины
+							li.navigation-list__item: a.navigation-list__link(href="#") Мебель
+							li.navigation-list__item: a.navigation-list__link(href="#") Смесители и <br> полотенцесушители
+							li.navigation-list__item: a.navigation-list__link(href="#") Акссесуары
+					
+					div.navigation-table__cell
+						h4.navigation__title Свет
+						ul.navigation-list.unstyled
+							li.navigation-list__item: a.navigation-list__link(href="#") Люстры
+							li.navigation-list__item: a.navigation-list__link(href="#") Подвесные светильники
+							li.navigation-list__item: a.navigation-list__link(href="#") Потолочные светильники
+							li.navigation-list__item: a.navigation-list__link(href="#") Настенные светильники
+							li.navigation-list__item: a.navigation-list__link(href="#") Напольные светильники
+							li.navigation-list__item: a.navigation-list__link(href="#") Настольные светильники
+							li.navigation-list__item: a.navigation-list__link(href="#") Встроенный свет
+							li.navigation-list__item: a.navigation-list__link(href="#") Подсветка картин
+							li.navigation-list__item: a.navigation-list__link(href="#") Модульные системы
+							li.navigation-list__item: a.navigation-list__link(href="#") Уличный свет
+						h4.navigation__title Декор
+						ul.navigation-list.unstyled
+							li.navigation-list__item: a.navigation-list__link(href="#") Зеркала
+							li.navigation-list__item: a.navigation-list__link(href="#") Багеты
+							li.navigation-list__item: a.navigation-list__link(href="#") Вазы
+							li.navigation-list__item: a.navigation-list__link(href="#") Декоративные объекты
+							li.navigation-list__item: a.navigation-list__link(href="#") Игрушки
+							li.navigation-list__item: a.navigation-list__link(href="#") Посуда
+
+					div.navigation-table__cell
+						h4.navigation__title Еда
+						ul.navigation-list.unstyled
+							li.navigation-list__item: a.navigation-list__link(href="#") Фрукты
+							li.navigation-list__item: a.navigation-list__link(href="#") Овощи
+							li.navigation-list__item: a.navigation-list__link(href="#") Продукты
+							li.navigation-list__item: a.navigation-list__link(href="#") Блюда
+							li.navigation-list__item: a.navigation-list__link(href="#") Напитки
+						h4.navigation__title Растения
+						ul.navigation-list.unstyled
+							li.navigation-list__item: a.navigation-list__link(href="#") Домашние
+							li.navigation-list__item: a.navigation-list__link(href="#") Уличные
+						h4.navigation__title Живые существа
+						ul.navigation-list.unstyled
+							li.navigation-list__item: a.navigation-list__link(href="#") Люди
+							li.navigation-list__item: a.navigation-list__link(href="#") Роботы
+							li.navigation-list__item: a.navigation-list__link(href="#") Персонажи
+							li.navigation-list__item: a.navigation-list__link(href="#") Животные
+							li.navigation-list__item: a.navigation-list__link(href="#") Домашние животные
+							li.navigation-list__item: a.navigation-list__link(href="#") Птицы
+							li.navigation-list__item: a.navigation-list__link(href="#") Насекомые
+							li.navigation-list__item: a.navigation-list__link(href="#") Морские Животные
+							li.navigation-list__item: a.navigation-list__link(href="#") Рыбы
+
+					div.navigation-table__cell
+						h4.navigation__title Транспорт
+						ul.navigation-list.unstyled
+							li.navigation-list__item: a.navigation-list__link(href="#") Авто
+							li.navigation-list__item: a.navigation-list__link(href="#") Мото
+							li.navigation-list__item: a.navigation-list__link(href="#") Вело
+							li.navigation-list__item: a.navigation-list__link(href="#") Авиа
+							li.navigation-list__item: a.navigation-list__link(href="#") Водный
+							li.navigation-list__item: a.navigation-list__link(href="#") Военный
+							li.navigation-list__item: a.navigation-list__link(href="#") Спортивный
+							li.navigation-list__item: a.navigation-list__link(href="#") Общественный
+							li.navigation-list__item: a.navigation-list__link(href="#") Космический
+							li.navigation-list__item: a.navigation-list__link(href="#") Спец.техника
+						h4.navigation__title Техника
+						ul.navigation-list.unstyled
+							li.navigation-list__item: a.navigation-list__link(href="#") ТВ
+							li.navigation-list__item: a.navigation-list__link(href="#") Офисная техника
+							li.navigation-list__item: a.navigation-list__link(href="#") Гаджеты
+							li.navigation-list__item: a.navigation-list__link(href="#") Часы
+							li.navigation-list__item: a.navigation-list__link(href="#") Музыкальные инструменты
+							li.navigation-list__item: a.navigation-list__link(href="#") Робот
+
+					div.navigation-table__cell
+						h4.navigation__title Оборудование
+						ul.navigation-list.unstyled
+							li.navigation-list__item: a.navigation-list__link(href="#") Магазин
+							li.navigation-list__item: a.navigation-list__link(href="#") Салон красоты
+							li.navigation-list__item: a.navigation-list__link(href="#") Ресторан
+							li.navigation-list__item: a.navigation-list__link(href="#") Спорт и отдых
+						h4.navigation__title Архитектурные <br> элементы
+						ul.navigation-list.unstyled
+							li.navigation-list__item: a.navigation-list__link(href="#") Окна и двери
+							li.navigation-list__item: a.navigation-list__link(href="#") Камины и радиаторы
+							li.navigation-list__item: a.navigation-list__link(href="#") Лестницы
+							li.navigation-list__item: a.navigation-list__link(href="#") Лепнина
+							li.navigation-list__item: a.navigation-list__link(href="#") Скульптуры
+							li.navigation-list__item: a.navigation-list__link(href="#") Шторы
+						h4.navigation__title Экстерьер
+						ul.navigation-list.unstyled
+							li.navigation-list__item: a.navigation-list__link(href="#") Ландшафт
+							li.navigation-list__item: a.navigation-list__link(href="#") Строения
+							li.navigation-list__item: a.navigation-list__link(href="#") Малые строения
+							li.navigation-list__item: a.navigation-list__link(href="#") Уличное оборудование
+
+			div.nav-profile.js-open-block#nav-profile
+				ul.nav-profile-list.unstyled
+					li.nav-profile-list__item
+						a.nav-profile-list__link(href="#") Публичный Профаил
+					li.nav-profile-list__item
+						a.nav-profile-list__link(href="#") Настройки
+					li.nav-profile-list__item
+						a.nav-profile-list__link(href="#") Уведомления
+							span.kbd 2
+					li.nav-profile-list__item
+						a.nav-profile-list__link(href="#") Выход
+
+				div.nav-profile-wrap
+					div.nav-profile__item
+						div.nav-profile__title: a(href="#") Загруженные модели
+						div.nav-profile__count 10
+						div.nav-profile__footer       
+							span.delspin
+								a(href="#") Просмотры
+								span.kbd 150
+							span.delspin
+								a(href="#") Коментарии
+								span.kbd 100 / 3
+
+					div.nav-profile__item
+						div.nav-profile__title
+							a(href="#") Текущие продажи
+							span.simbol ?
+						div.nav-profile__count $10
+						div.nav-profile__footer
+							span.delspin
+								a(href="#") Общие продажи
+								span.kbd $100
+
+					div.nav-profile__item
+						div.nav-profile__title
+							a(href="#") Доступно моделей
+							span.simbol ?
+						div.nav-profile__count 10
+						div.nav-profile__footer
+							span.delspin
+								a(href="#") Покупки
+							span.delspin
+								a(href="#") Избранное
+								span.kbd 50
+
+// HEADER EOF	

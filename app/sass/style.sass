@@ -1,0 +1,1805 @@
+// done by Coderiver.com.ua
+@import lib/base
+@import normalize
+@import slick
+@import styled
+@import fancybox
+// @import main
+
+
+$color-default: #e5e5e5
+
+$color-warning: #c1a788
+
+/* 3. MAIN STYLES
+/* ================================================ */
+
+body.fixed-header
+	padding-top: 110px
+
+.main-wrapper
+	padding: 0 0 0 0
+	min-width: 1210px
+	position: relative
+	
+	min-height: 100%
+
+
+.wrapper
+	width: 1210px
+	padding: 0 10px 0 10px
+	margin: 0 auto
+	position: relative
+
+
+/* titles */
+h1
+	font-size: 24px
+	line-height: 28px
+	padding: 7px 0 7px 0
+	font-weight: 400
+	color: #1f1611
+	.link 
+		display: inline-block
+		border-bottom: 1px solid transparent
+		&:hover
+			border-bottom: 1px solid 
+
+h2
+	font-size: 1.8em
+	line-height: 1.1em
+	padding: 7px 0 7px 0
+	font-weight: 400
+	color: #1f1611
+
+h3
+	font-size: 24px
+	line-height: 28px
+	padding: 7px 0 7px 0
+	font-weight: 400
+	color: #1f1611
+h4
+	font-size: 18px
+	line-height: 22px
+	padding: 7px 0 7px 0
+	font-weight: 400
+	color: #1f1611
+
+
+h6
+	font-size: 14px
+	line-height: 20px
+	padding: 7px 0 7px 0
+	font-weight: 400
+	color: #1f1611
+p
+	font-size: 14px
+	line-height: 18px
+	padding: 7px 0 7px 0
+	font-weight: 400
+	color: #1f1611
+	.link 	
+		line-height: 14px
+		vertical-align: middle
+
+span.kbd 
+	display: inline-block
+	margin: 0 0 0 7px
+
+ol
+	list-style-position: inside
+	line-height: 18px
+
+table 	
+	width: 100%
+	margin: 13px 0 16px
+	td, th 
+		text-align: left
+		font-weight: 400
+		padding: 13px 13px
+		border-top: 1px solid $color-default
+		&.td-date 
+			width: 90px
+		&.td-summa 
+			width: 175px
+	tr:last-child td 
+		border-bottom: 1px solid $color-default
+
+
+
+.delspin
+	display: inline-block
+	vertical-align: top
+	& + .delspin
+		margin-left: 7px
+
+/* text position */
+
+.text-left
+	text-align: left !important
+
+.text-center
+	text-align: center !important
+
+.text-right
+	text-align: right !important
+
+.text-warning
+	color: $color-warning
+.nowrap
+	white-space: nowrap !important
+ol.list
+	list-style-type: decimal
+	line-height: 17px
+
+.fl 
+	float: left !important
+.fr 
+	float: right !important
+
+.mt10
+	margin-top: 10px !important
+.mt5
+	margin-top: 5px !important
+.mt7
+	margin-top: 7px !important
+.mb30 
+	margin-bottom: 30px !important
+.mb25 
+	margin-bottom: 25px !important
+.mb20 
+	margin-bottom: 20px !important
+.hidden 
+	display: none !important
+/* loader */
+.loaded .main-wrapper
+	visibility: hidden
+
+.icon-load
+	background: url(../img/loader.gif) no-repeat left top
+	width: 40px
+	height: 40px
+	position: fixed
+	left: 50%
+	top: 50%
+	margin-left: -20px
+	margin-left: -20px
+	display: none
+
+.loaded .icon-load
+	display: block
+
+
+
+/* 3.1. Icons
+     ====================== */
+.ic
+	top: -1px
+	position: relative
+	display: inline-block
+	vertical-align: middle
+	background: url(../img/sprite.png) no-repeat 0 0 
+	&_flag-ru
+		top: -2px
+		width: 18px
+		height: 12px 
+		background-position: 0 0 
+	&_flag-en
+		top: -2px
+		width: 18px
+		height: 12px 
+		background-position: 0 -12px 
+	&_models-two
+		width: 13px
+		height: 12px
+		background-position: -18px 0
+	&_models-one
+		width: 12px
+		height: 12px
+		background-position: -18px -12px
+	&_models-three
+		width: 12px
+		height: 12px
+		background-position: -18px -24px
+	&_corona 
+		width: 18px
+		height: 8px
+		background-position: -37px 0
+	&_play 
+		width: 6px
+		height: 11px
+		background-position: -30px 0
+	&_arrow 
+		width: 21px
+		height: 11px
+		background-position: -31px -14px
+	&_eye
+		width: 27px
+		height: 12px
+		background-position: -56px 0px
+	
+
+	
+/* 3.2. Buttons
+     ====================== */
+.button, a.button, button.button
+	position: relative
+	display: inline-block
+	vertical-align: middle
+	height: 34px
+	padding: 7px 34px 0
+	font: 400 17px/18px 'MyriadPro', Arial, sans-serif
+	color: #fff
+	text-align: center
+	text-decoration: none
+	border: none
+	background-color: #eee
+	cursor: pointer
+	+br(4px)
+	+tr(all 0.2s linear)
+	&_block
+		width: 100%
+		display: block
+		padding-right: 3px
+		padding-left: 3px
+	&_lg 
+		height: 57px
+		padding: 18px 41px 0
+		border-radius: 0
+	&_moderate
+		width: 220px
+	&_warning 
+		background-color: $color-warning
+		&:hover 
+			background-color: #A38D73
+			color: #fff
+			text-decoration: none
+	& + .help-text
+		margin-left: 20px
+	&.main-button 
+		width: 182px
+		margin-top: 30px
+		margin-bottom: 5px
+.box-button 
+	margin: 12px 0 
+	.button + .button-info 
+		display: inline-block
+		margin-left: 20px
+
+input.button,
+button.button 
+	padding-top: 0 !important
+	padding-bottom: 2px !important
+
+// button group
+.btn-group 
+	.button + .button 
+		margin-left: 15px
+	&_vertical
+		.button + .button 
+			margin-top: 15px
+
+
+/* 3.3. forms
+     ====================== */
+input[type='text'], 
+input[type='number'], 
+input[type='email'], 
+input[type='tel'], 
+input[type='search'], 
+input[type='url'], 
+input[type='password'], 
+textarea, 
+select
+	height: 33px
+	margin-bottom: 15px
+	padding: 0 10px
+	color: #000
+	font: normal 14px/18px 'MyriadPro', Arial, sans-serif
+	border: 1px solid #ccc
+	background: #fff
+	+br(4px)
+	&.form-control 
+		display: block
+		width: 100%
+	&:focus 
+		background-color: #f7f7f7
+	+placeholder
+		color: #aaa
+
+textarea 
+	height: auto
+	min-height: 85px
+	padding-top: 10px
+	resize: vertical
+	font: normal 14px/18px 'MyriadPro', Arial, sans-serif
+	
+label 
+	display: block
+	font-weight: 400
+	font-size: 14px
+	margin-bottom: 5px
+
+.help-text
+	color: rgba(0,0,0,0.4)
+	font-size: 14px
+	font-weight: 400
+	line-height: 24px
+	&.inline
+		display: inline-block
+		vertical-align: middle
+
+.box-select-group
+	border: 1px solid #ccc
+	+br(4px)
+	+clr
+	.jq-selectbox
+		display: inline-block
+		vertical-align: top
+		
+		&.col-3
+			width: 33.33%
+			display: block
+			float: left 
+		&.focused .jq-selectbox__select
+			border: none
+
+	.jq-selectbox__select
+		border: none
+
+
+.box-field-group
+	+clr
+	.box-field 
+		float: left
+		& + .box-field 
+			margin-left: 4%
+		
+
+.box-field 
+	margin-bottom: 15px
+	&.col-5 
+		width: 61%
+	&.col-4 
+		width: 35.3%
+	&.col-3 
+		width: 26%
+	&.col-2 
+		width: 23%
+	&.col-1 
+		width: 13.5%
+	input,
+	textarea, 
+	select
+		margin-bottom: 0 !important
+
+
+
+
+.checkbox, .radio
+	label
+		margin-left: -20px
+		padding-left: 26px
+		display: inline-block
+		vertical-align: top
+		width: 100%
+		line-height: 18px
+		font-size: 14px
+		.link 
+			display: inline
+
+.captcha
+	margin: 28px 0 30px
+
+.settings-buttons-form
+	margin-bottom: 20px
+
+.box-label
+	&__title 
+		position: relative
+		z-index: 1
+		display: inline-block
+		vertical-align: middle
+		font-size: 18px
+		line-height: 22px
+		width: 210px
+		margin-right: -4px
+		margin-bottom: 40px
+
+	&__cont 
+		display: inline-block
+		vertical-align: middle
+		width: 100%
+		margin-left: -210px
+		padding-left: 215px
+		margin-right: -4px
+		margin-bottom: 40px
+		font-size: 18px
+		line-height: 24px
+		.link + .link 
+			margin-left: 60px
+		small 
+			font-size: 14px
+			line-height: 18px
+		input.box-label__input 
+			position: relative
+			top: 2px
+			margin-bottom: 0
+			padding: 0 8px
+			margin-left: -6px
+			font-size: 22px
+			width: 118px
+	&.small 
+		margin-top: 20px
+		.box-label__title 
+			width: 230px
+			margin-bottom: 28px
+		.box-label__cont 
+			margin-left: -230px
+			padding-left: 243px
+			margin-bottom: 28px
+			font-size: 14px
+			line-height: 18px
+
+.count 
+	font-size: 36px
+	line-height: 36px
+	font-weight: 400
+
+
+.user
+	margin: 31px 0 13px
+	label 
+		margin-bottom: 14px
+	&__avatar
+		width: 100px
+		height: 100px
+		line-height: 100px
+		text-align: center
+		background-color: #f7f7f7
+		overflow: hidden
+		&--transparent
+			background: transparent
+		img
+			display: inline-block
+			vertical-align: middle
+			max-width: 100px
+			width: 100%
+
+	&__add-avatar 
+		.box-field__input + .box-field__input
+			margin-top: 23px
+
+ 
+/* 4. HEADER
+/* ================================================ */
+header
+	width: 100%
+	min-width: 320px
+	text-align: left
+	min-height: 100px
+	//position: absolute
+	//left: 0px
+	//top: 10px
+	margin-top: 10px
+	z-index: 9999
+	&.fixed
+		position: fixed
+		top: 0
+		margin-top: 0
+		min-height: 50px
+		.header-top
+			border-bottom: 1px solid $color-default
+		.box-nav-list
+			display: none
+		.header-bottom 
+			position: absolute
+			top: 0
+			left: 232px
+			right: 10px
+			border-left: 1px solid $color-default
+			border-top: none
+			border-bottom: 1px solid $color-default
+		.navigation,
+		.nav-profile
+			left: -223px
+			right: 0
+
+// header bottom
+.header	
+	&-bottom
+		height: 50px
+		background: #fff
+		border-top: 1px solid $color-default
+	&-table 
+		display: table
+		width: 100%
+		border-collapse: collapse
+		&__item 
+			display: table-cell
+			vertical-align: middle
+			text-align: center
+			padding: 0 15px
+			color: #2e2e2e
+			font-size: 14px
+			line-height: 13px
+			font-weight: 400
+			border-right: 1px solid $color-default
+			&:hover 
+				background-color: #f7f7f7
+			&:first-child 
+				padding-left: 0
+				text-align: left
+			&:last-child 
+				padding-right: 0
+				border-right: none
+			&.models 
+				width: 126px
+				padding-left: 20px
+			&.add-models
+				width: 152px
+			&.link-login
+				width: 110px
+			&.link-registr
+				width: 130px
+				padding-right: 20px
+				border-right: none
+			&.mini-profile
+				width: 182px
+				padding: 0
+			&.search 
+				padding: 0
+				&:hover
+					background-color: transparent
+
+.header-top
+	height: 50px
+	padding: 14px 20px
+	background: #fff
+	+clr
+
+.logo 
+	width: 200px
+	float: left
+	font-size: 23px
+	line-height: 20px
+	text-transform: uppercase
+	&__svg
+		width: 180px
+	strong 
+		font-weight: 600
+
+.box-nav-list 
+	float: right
+
+// navigation
+.nav-list
+	margin: 5px -5px 0
+	&__item 
+		position: relative
+		display: inline-block
+		vertical-align: top
+		margin-right: -4px
+		padding: 0 10px 0 9px
+		
+	&__link 
+		display: block
+		span:not(.nav-list__icon)
+			display: inline-block
+			border-bottom: 1px solid transparent
+			-moz-transition: all 0.2s linear
+			-o-transition: all 0.2s linear
+			-ms-transition: all 0.2s linear
+			-webkit-transition: all 0.2s linear
+			transition: all 0.2s linear
+		&.arrow-down 
+			padding-right: 18px
+		&:hover span:not(.nav-list__icon)
+			border-bottom: 1px solid
+	&__icon 
+		margin-left: 7px
+		display: inline-block
+
+.lang-list 
+	position: absolute
+	top: 100%
+	right: 28px
+	z-index: 2
+	display: none
+	&__item 
+		margin-bottom: 3px
+
+.arrow-down 
+	display: block
+	padding-right: 16px
+	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAGCAYAAAAVMmT4AAAANklEQVQoU2NkYGD4zwABjFAaGwVWA1OATwNcDtk0bBpQxNCtRpbE0IzNnTBFGP7A5SmQBgw5AALrCgbjsJcXAAAAAElFTkSuQmCC") no-repeat right center
+
+.models 
+	&.active 
+		background-color: #f7f7f7
+	&__text
+		display: block
+	
+// Search	
+.search 
+	form 
+		position: relative
+	input.search__input
+		height: 49px
+		width: 100%
+		padding-right: 60px
+		text-align: left
+		margin-bottom: 0
+		border: none
+		border-right: 1px solid $color-default
+		background: transparent 
+		+placeholder 
+			color: rgba(0,0,0,0.4)
+	&__button 
+		position: absolute
+		top: 0
+		right: 0
+		z-index: 2
+		height: 49px
+		width: 50px
+		padding: 0
+		border: none
+		border-left: 1px solid $color-default
+		background: #fff url(../img/svg/search.svg) no-repeat center
+
+	&__results
+		display: none
+		position: absolute
+		z-index: 100
+		top: 50px
+		left: 0px
+		right: 0px
+		background: #fff
+		border-right: 1px solid $color-default
+		border-left: 1px solid $color-default
+		border-bottom: 1px solid $color-default
+		text-align: left
+
+		&-item
+			border-bottom: 1px solid $color-default
+			padding: 10px 0
+			width: 100%
+			display: inline-block
+			vertical-align: middle
+			img
+				display: inline-block
+				vertical-align: middle
+				margin-right: 10px
+				height: 30px
+
+
+
+// mini profile
+.mini-profile 
+	&__img 
+		position: relative
+		z-index: 2
+		display: inline-block
+		vertical-align: middle
+		width: 50px
+		height: 49px
+		line-height: 49px
+		border-right: 1px solid $color-default
+		img 
+			display: inline-block
+			vertical-align: middle
+	&__link 
+		display: inline-block
+		vertical-align: middle
+		width: 100%
+		height: 49px
+		line-height: 49px
+		margin-left: -50px
+		padding-left: 50px
+		padding-right: 20px
+
+		&-login-wrapper
+			position: relative
+			padding-right: 30px
+
+		&-login-name
+			display: block
+			max-width: 90px
+			padding-right: 10px
+			overflow: hidden
+			text-overflow: ellipsis
+			white-space: nowrap
+
+		.ic 
+			position: absolute
+			top: 50%
+			right: 15px
+			margin-top: -7px
+	&.active 
+		background-color: #f7f7f7
+
+// Navigation
+.navigation,
+.nav-profile
+	display: none
+	position: absolute
+	top: 100%
+	left: 10px
+	right: 10px
+	border-top: 1px solid $color-default
+	background-color: #f7f7f7
+	z-index: 75
+
+.navigation
+	z-index: 100 !important
+	overflow: hidden
+	&-table 
+		display: table
+		width: 100%
+		z-index: 5
+		position: relative
+		background-color: #f7f7f7
+		&__cell 	
+			display: table-cell
+			width: 229px
+			padding: 16px 10px 25px
+			border-right: 1px solid $color-default
+			&:last-child
+				width: 245px
+				border-right: none
+				padding-right: 20px
+			&:first-child 
+				padding-left: 20px
+			&:first-child 
+				width: 251px
+	&__title 
+		padding-bottom: 0px
+	&-list 
+		margin-bottom: 10px
+		&__item 
+			line-height: 20px
+		&__link 
+			border-bottom: 1px solid transparent
+			&:hover 
+				border-bottom: 1px solid 
+
+.nav-profile
+	a 
+		display: inline-block
+		color: #000
+		border-bottom: 1px solid
+		&:hover 
+			border-bottom-color: transparent
+	&-wrap
+		overflow: hidden
+		margin-right: 180px
+	&__item
+		float: left
+		width: 33.33%
+		padding: 18px 22px 0
+		border-right: 1px solid $color-default
+	&__count 
+		padding: 10px 0 7px
+		color: #000
+		font-size: 27px
+		font-weight: 400
+		line-height: 30px
+
+	&__footer 
+		margin: 0 -22px
+		padding: 10px 22px 16px
+		border-top: 1px solid $color-default
+	&-list 
+		width: 180px
+		float: right
+		padding: 18px 22px
+		&__item 
+			margin-bottom: 9px
+			&:last-child 
+				margin-bottom: 0 
+
+
+
+.simbol
+	display: inline-block
+	width: 12px
+	height: 12px
+	margin-left: 4px
+	color: #fff
+	font-size: 12px
+	line-height: 12px
+	font-weight: 400
+	text-align: center
+	cursor: pointer
+	background-color: #bda180
+	+br(50%)
+
+.devider
+	display: inline-block
+	margin: 0 7px
+
+.link 
+	display: inline-block
+	border-bottom: 1px solid
+	&:hover 
+		border-bottom: 1px solid transparent
+	&_warning 
+		color: $color-warning
+
+
+/* 5. CONTENT
+/* ================================================ */
+
+.heading 
+	padding: 152px 0 80px
+	text-align: center
+	background: #8a8a8a
+	&__title 
+		color: #fff
+		text-transform: uppercase
+	h2.heading__title 
+		font-size: 115px
+		line-height: 100px
+	h1.heading__title
+		padding-top: 0
+		padding-bottom: 4px
+		font-size: 148px
+		line-height: 118px
+		font-weight: 700
+
+.banner 
+	background: #fff
+	text-align: center
+	a 
+		display: block
+		height: 100px
+		+vertical
+	&_horizontal 
+		margin: 10px 0
+	&__title 
+		display: inline-block
+		vertical-align: middle
+		font-size: 14px
+		line-height: 20px
+		color: rgba(0,0,0,0.6)
+
+
+.block-title
+	padding: 17px 22px 12px
+	background: #fff 
+	border-bottom: 1px solid $color-default
+	&__link 
+		margin-left: 40px
+		font-size: 14px
+		line-height: 18px
+	&.sm 
+		height: 50px
+		padding: 7px 22px
+// tabs 
+.box-tab 
+	margin-top: 10px
+	&-cont
+		position: relative
+	
+.nav-tabs-list
+	padding: 14px 22px
+	background: #fff
+	&__item 
+		display: inline-block
+		vertical-align: top
+		margin-right: 24px
+		&.active .nav-tabs-list__link, 
+		a:hover, &.active .link 
+			color: #000
+			text-decoration: none
+		.link 
+			color: rgba(0,0,0,0.5)
+	&__link 	
+		font-size: 18px
+		line-height: 22px
+		color: #ccc
+
+
+
+.tab-cont__body 
+	padding: 12px 22px 
+	border-bottom: 1px solid $color-default
+	background: #fff
+.tab-cont__footer 
+	padding: 5px 22px 20px
+	background: #fff
+
+.link-list
+	margin: 24px 0 8px
+	line-height: 18px
+
+.link-group 
+	padding: 10px 0
+	.link 
+		display: inline-block
+		vertical-align: top
+	.link + .link 
+		margin-left: 25px
+
+.tags-list
+	max-width: 280px
+	margin-top: 10px
+	&__item 	
+		display: inline-block
+		vertical-align: top
+	&__link 
+		display: inline-block
+		line-height: 14px
+		margin-bottom: 3px
+		margin: 2px 0 1px
+		border-bottom: 1px solid
+		&:hover 
+			border-bottom-color: transparent
+
+
+.box-rating 
+	margin: 39px 0 20px
+.rating
+	display: block
+	overflow: hidden
+	&__count 
+		float: left
+		margin-right: 10px
+		font-size: 18px
+		line-height: 18px
+
+.product
+	&-info 
+		margin: -8px 26px
+		position: relative
+		padding: 49px 0
+	p 
+		line-height: 16px
+		padding-bottom: 11px
+
+.product-list 
+	margin: 0 0 0 -10px
+	overflow: hidden
+	&.col-4 
+		.product-list__item 
+			width: 25%
+	&.col-4:not(.sm)
+		.product-list__img
+			height: 219px
+			img
+				max-height: 219px
+	&__item
+		position: relative
+		float: left
+		width: 20%
+		padding-left: 10px
+		margin-top: 10px
+		&:hover .product-list__img, 
+		&:hover .product-list__cont
+			border-color: #c1a788
+
+		&:hover .product-list__ajax
+			display: block
+
+
+	&__ajax
+		display: none
+		z-index: 5
+		position: absolute
+		top: 50%
+		left: 50%
+		height: 30px
+		width: 30px
+		margin: -15px 0 0 -15px
+		background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAABdklEQVRIS8WXvy9EQRCAv+n8B0Sj0UkUCuU1KqVCchqdoBRE6SnFr5KLTkOiUGporlQoJDoFjfAX0I3MZZ/sPc/dnvfsvnJ3Zr6debMzs0LAp6qjQAOYBiaBcWDYqb4DT8ADcAe0ReS1n1npJaCqE8A8MOeA/ezZvh3gCrgUkcffFErBqmrry8ASMBVCK5G5B06Blohocf8HWFVHgA1g/Y/AotoBsC8ib/5GF9hBM+dtTdyOmRaQ+fBvsAvvXo2elnm+mYfdB68Ax3W6WWJrVURObL0Ddtl7FppI7YvdLpuN5lboeS3hFi3bc7D91+1Q7QpgQ+yISCauOFwPcE+pCLZ7PmvgJnAe6q3JVQSbiQUDHwJrkcFHBr4BZiKDbw38DIyVgYshHeRwJtsj218M/AEMRQZ/JgUnC3Wy5Ep2nZIVEJun4pdM153iN4mkbdHB4w8CDmy9Of7o4+A2YcYd9vJanWS89eDxB3q/S0V/whRb5H882r4Ae67bIRWpY90AAAAASUVORK5CYII=") no-repeat center
+
+	&__img 
+		position: relative
+		background: #fff
+		border: 1px solid #fff
+		border-bottom: none
+		height: 179px
+		overflow: hidden
+		+vertical
+		a:not(.product-list__ajax)
+			position: relative
+			display: inline-block
+			vertical-align: middle
+			width: 100%
+		img
+			display: block
+			width: 100%
+			min-height: 100%
+	&__cont
+		padding: 0 9px 5px 9px
+		background: #fff
+		border: 1px solid #fff
+		border-top: none
+	&__title 
+		padding-bottom: 4px
+		+text-overflow
+		a 	
+			display: inline-block
+			border-bottom: 1px solid transparent
+			color: rgba(31,22,0, 0.8)
+			&:hover 
+				border-bottom: 1px solid 
+
+.product-panel
+	border-top: 1px solid #f7f7f7
+	padding-top: 8px
+	overflow: hidden
+	&__item 
+		float: right
+		font-size: 12px
+		line-height: 14px
+		color: rgba(0,0,0, 0.5)
+		
+	&__icon 
+		display: inline-block
+		vertical-align: top
+		margin-left: 11px
+		&-icon
+			position: relative
+			display: inline-block
+			vertical-align: middle
+			&__downloads
+				margin-right: 3px
+				width: 12px
+				height: 12px
+				background: url(../img/svg/icon_downloads.svg) no-repeat center -6px
+			&__comments
+				width: 12px
+				height: 12px
+				background: url(../img/svg/icon_comments.svg) no-repeat center -5px
+			&__stars
+				width: 12px
+				height: 12px
+				background: url(../img/svg/icon_stars.svg) no-repeat center -5px
+
+
+.product-slider
+	position: relative
+	overflow: hidden
+	margin: -8px -22px 0
+	border-bottom: 1px solid $color-default
+	img 
+		display: block
+		max-width: 100%
+		width: 100%
+
+	*:focus 
+		outline: none
+
+.slider-for
+	width: 83%
+	float: left
+	&__item 
+		border-right: 1px solid $color-default
+		iframe 	
+			display: block
+			width: 100% !important
+			height: 500px
+
+.slider-nav
+	float: right
+	width: 17%
+	&__item 
+		position: relative
+		display: block
+		height: 120px !important
+		+opacity(0.5)
+		+tr(all 0.4s)
+		
+		&.slick-current, &:hover
+			+opacity(1)
+		&.video
+			&:before 
+				position: absolute
+				top: 50%
+				left: 50%
+				z-index: 2
+				content: ''
+				display: block
+				width: 47px
+				height: 47px
+				margin: -24px 0 0 -24px
+				cursor: pointer
+				background: rgba(0,0,0,0.3) url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAbCAYAAABxwd+fAAAA00lEQVRIS63VPQ5BQRSG4e/dj0WhlIgFqBQ2oLEAlV6nUkkUKlGLTqWRiIKRI0YU997MnTnTf0/m58w5hBA6wEGFixDCVtJS0gx45XoRsvxZUhe452D/UMyPgF1brAoyYyNpDDxTwTrI8o/vUU8pWBMU8wtJcyA0gSmQ5S+SesC1DkuFYn4KrKqwtpAZR0kDwO7wt3IgC1vhDoF9lHKhmF9LmliZlEIG3iT1PaDP7jwglx0V35HLq7nUUXFlu/y14t/v0o9cOmRxz3aZIi5zzWXSvgGfLZYUYlEBKgAAAABJRU5ErkJggg==') no-repeat 17px center
+				+br(50%)
+			&:hover:before
+				background-color: rgba(0,0,0,0.6)
+		img 
+			max-width: 100%
+			height: auto
+			
+
+.author 
+	display: inline-block
+	vertical-align: top
+	font-size: 12px
+	font-weight: 400
+	color: #1f1611
+	a 
+		display: inline-block
+		vertical-align: top
+		margin-left: 4px
+		max-width: 56px
+		color: #bda180
+		+text-overflow
+		border-bottom: 1px solid
+		&:hover 
+			border-bottom-color: transparent
+	.ic 
+		margin-left: 3px
+
+.panel 
+	position: absolute
+	bottom: 0
+	left: 0
+	&_top 
+		bottom: auto 
+		top: 0
+	&__item 
+		display: inline-block
+		vertical-align: top
+		width: 30px
+		height: 30px
+		padding-top: 6px !important
+		text-align: center
+		color: #fff
+		font-size: 18px
+		font-weight: 400
+		text-transform: uppercase
+		
+		&_corona
+			background-color: #949494
+		&_play 
+			background-color: #333
+		&_ss 
+			background-color: #6b6b6b
+
+.box-comment
+	padding: 20px 40px
+	margin: 0 -22px
+.comment
+	padding: 22px 0
+	.author
+		font-size: 14px
+		a 
+			width: auto
+			margin-right: 3px
+			margin-left: 0
+			border-bottom-color: transparent
+			&:hover 
+				border-bottom: 1px solid
+
+.hide
+	position: absolute
+	left: 0 
+	top: 0
+	height: 0 
+	width: 0
+	overflow: hidden
+	z-index: -1
+	+opacity(0)
+
+// main-wrap
+
+.main-wrap 
+	margin-top: 10px
+	background: #fff
+	&__header
+		height: 100px
+		padding: 29px 22px
+		border-bottom: 1px solid $color-default
+		.box-select-group
+			height: 100px
+			white-space: nowrap
+			
+			border: none
+			float: right
+
+			margin: -29px -13px -29px 0
+			padding: 35px 0 31px 44px
+			.jq-selectbox__dropdown
+				min-width: 120px
+			.jq-selectbox__select
+				display: inline-block
+				width: auto
+				padding-right: 27px
+				padding-left: 0
+			.jq-selectbox__select-text
+				color: #625b58
+			.jq-selectbox:hover 
+				display: inline-block
+				width: auto
+				.jq-selectbox__select
+					background-color: transparent
+		
+		.nav-tabs-list
+			padding: 6px 0 12px
+		.nav-tabs-list__item
+			margin-right: 30px
+	&__body 
+		padding: 10px 22px 23px
+		margin-bottom: 10px
+	&.catalog 
+		.box-select-group
+			border-left: 1px solid $color-default
+
+
+.wrap 
+	overflow: hidden 
+	&-left
+		margin-right: 45%
+		padding: 8px 22px 22px
+		border-right: 1px solid $color-default
+	&-right
+		float: right
+		width: 45%
+		padding: 8px 115px 22px 22px
+		margin-right: 1px
+		border-left: 1px solid $color-default
+	&.support .wrap-right,
+	&.product .wrap-right
+		padding: 8px 22px 22px 22px	
+	&__title 
+		padding-bottom: 20px
+	&-list
+		padding: 20px 0
+		&__item 
+			margin-bottom: 8px
+			&:last-child 
+				margin-bottom: 0
+		&__link 
+			font-size: 18px
+			line-height: 24px
+			display: inline-block
+			border-bottom: 1px solid transparent
+			&:hover 
+				border-bottom: 1px solid
+	&_small 
+		.wrap-left
+			margin-right: 29%
+		.wrap-right
+			width: 29%
+	&.product
+		.wrap-left 
+			margin-right: 39%
+		.wrap-right
+			width: 39%
+
+
+.column 
+	&.bg 
+		background: #fff
+/* ARTICLE */
+
+
+
+.article
+	background: #fff
+	padding: 18px 18px 15px
+	border-bottom: 1px solid $color-default
+	&:last-child 
+		border-bottom: none
+	&__title 
+		padding-bottom: 4px
+		a:hover 
+			color: $color-warning
+	&__body 
+		img 
+			display: block
+			max-width: 100%
+			margin-bottom: 10px
+		p 
+			line-height: 18px
+	
+	.product-panel__icon 
+		margin-left: 11px
+	.product-panel__item
+		float: none
+		margin-left: 10px
+		font-size: 14px
+		.fa 
+			color: $color-warning
+
+.box-top 
+	padding-bottom: 10px
+	overflow: hidden
+	.author .ic 
+		margin-left: 4px
+	&__avatar 
+		float: left
+		width: 50px
+		height: 50px
+	&__cont 
+		margin-left: 64px
+		padding-top: 3px
+
+.date 
+	display: inline-block
+	vertical-align: middle
+	color: rgba(0,0,0,0.5)
+
+.more 
+	color: rgba(0,0,0,0.5)
+	border-bottom: 1px solid transparent
+	&:hover 
+		border-bottom: 1px solid
+
+.registration
+	margin: 30px 0 0 
+	max-width: 282px
+	.box-form__button 
+		margin: 24px 0 14px
+
+.box-form
+	&__title 
+		padding-bottom: 14px
+
+.payment
+	margin: 34px 0 0 
+	&__button-group
+		display: inline-block
+		vertical-align: middle 
+		width: 246px
+		margin-right: 10px
+		button 	
+			text-align: left
+			padding-left: 14px
+			padding-right: 14px
+		button + button 
+			margin-top: 10px
+	&__method
+		display: inline-block
+		vertical-align: middle
+
+
+.settings
+	margin: 20px 0 0 
+
+.enter-social
+	margin: 13px -22px
+	padding: 13px 22px
+	border-top: 1px solid $color-default
+
+
+.block-pof	
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	display: none
+	z-index: 1
+
+
+// accordion 
+
+.accordion
+	margin-top: -8px
+	&-wrap 
+		margin: 0 -22px 0
+		padding: 0 22px 9px
+		border-bottom: 1px solid $color-default
+		&:first-child
+			.accordion__head
+				padding-top: 22px
+		&.active 
+			background-color: #fdfdfd
+	&__body
+		display: none
+	&__head
+		padding: 14px 0 8px
+		a 
+			color: $color-warning
+			display: inline-block
+			border-bottom: 1px solid
+		&.open a 
+			border-bottom-color: transparent
+
+
+/* BREADCRUMBS ---- */
+
+.box-breadcrumbs	
+	padding: 18px 22px
+	background: #fff
+	border-bottom: 1px solid $color-default
+
+.breadcrumbs-list
+	&__item
+		display: inline-block
+		vertical-align: top
+		padding-right: 17px
+		margin-left: 11px
+		background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAJCAYAAAD6reaeAAAAMElEQVQYV2NMio74P2/pCkYGJMAIEgTxkSXAKtAl4NqQJVDMgkngVolhJlbbsbkTAMSqIh52bZREAAAAAElFTkSuQmCC') no-repeat right center
+		&:first-child 
+			margin-left: 0
+		&:last-child 
+			background: none
+	&__link
+		border-bottom: 1px solid transparent
+		&:hover 
+			border-bottom: 1px solid
+
+
+/* PAGINATION ---- */ 
+
+.pagination
+	height: 100px
+	padding: 25px 25px 10px
+	background: #fff
+	margin: 10px 0
+	text-align: center
+	&-list 
+		&__item
+			display: inline-block
+			vertical-align: top
+			margin: 0 3px
+
+			&.active .pagination-list__link,
+			.pagination-list__link:hover
+				background-color: $color-warning
+				color: #fff
+			&.prev, &.next 
+				.pagination-list__link
+					width: auto
+					padding-left: 8px
+					padding-right: 8px
+					padding-top: 5px
+					&:hover 
+						background-color: transparent
+			&.prev
+				.ic_arrow
+					+rotate(180)
+
+		&__link 
+			display: block
+			width: 30px
+			height: 30px
+			font-size: 18px
+			line-height: 18px
+			padding-top: 6px
+			text-align: center
+			color: #000
+	&__text 
+		padding-top: 12px
+		display: inline-block
+		color: rgba(0,0,0,0.6)
+/* 6. SIDEBAR
+/* ================================================ */
+
+.content-wrap
+	float: left
+	width: 950px
+	margin-top: 10px
+	.main-wrap 
+		margin-top: 0
+aside 
+	float: right
+	width: 230px
+	margin-top: 10px
+	.banner 
+		margin-bottom: 10px
+		a 
+			height: 550px
+		&_sm a 
+			height: 287px
+		&:last-child 
+			margin-bottom: 0
+	&.fl 
+		& + .content-wrap
+			float: right
+
+/* PROFILE */
+
+.profile
+	background: #fff
+	&-cont 
+		padding: 16px 17px 13px
+		border-bottom: 1px solid $color-default
+		&__title
+			padding: 0
+			line-height: 17px
+		&__text 
+			padding: 0
+			line-height: 17px
+			span.p-link
+				display: inline-block 
+				word-break: break-all
+		.social__item 
+			margin-top: 10px
+			margin-right: 7px
+		.social__link 
+			height: 22px
+			width: 22px
+			padding-top: 4px
+			font-weight: 400
+			background-color: #b4b4b4
+		&:last-child
+			border-bottom: none
+	&__avatar 
+		height: 100px
+		width: 100px
+		overflow: hidden
+		margin-bottom: 8px
+		
+		img 
+			display: block
+			max-width: 100%
+	&__text 
+		line-height: 18px
+		margin-bottom: 30px
+
+
+
+.web-link-list
+	&__link
+		display: inline-block
+		&:after
+			content: ''
+			display: block
+			border-top: 1px solid #c7c5c3
+			border-bottom: 1px solid #8f8a88
+			-moz-transition: all 0.2s linear
+			-o-transition: all 0.2s linear
+			-ms-transition: all 0.2s linear
+			-webkit-transition: all 0.2s linear
+			transition: all 0.2s linear
+		&:hover:after
+			border-color: transparent
+
+
+
+.popup
+	position: absolute
+	left: -9999px
+	top: -9999px
+	+opacity(0)
+
+.window-open
+	position: relative
+	width: 1345px
+	max-width: 100%
+	&#login 
+		width: 400px
+		.registration
+			max-width: 100%
+			margin-top: 0
+			.box-form__button
+				margin-bottom: 23px
+		.box-form
+			padding: 30px 64px 17px 54px
+			h3 
+				margin-bottom: 10px
+			.captcha
+				margin: 18px 0 35px
+
+		.enter-social
+			margin: 0
+			padding-bottom: 0
+			padding-top: 9px
+			text-align: center
+			border-top-color: #808080
+			.social-wrap
+				margin-top: 8px
+				margin-bottom: 2px
+			p 
+				text-align: left
+				padding: 7px 32px
+
+	&#product 
+		width: 900px
+		.wrap-right
+			position: relative
+			left: -1px
+			width: 33.4%
+			padding-bottom: 0
+			margin-right: 0
+		.wrap-left 
+			margin-right: 33.4%
+			padding-bottom: 0
+
+		.slider-for
+			width: auto !important
+			float: none
+			&__item 
+				border-right: none
+		.product-info
+			margin: -8px -22px 0
+			padding: 60px 18px 0
+			&__header
+				margin: -8px -18px
+				padding-right: 18px
+				padding-left: 18px
+				padding-bottom: 10px
+				border-bottom: 1px solid $color-default
+
+			h1 
+				padding-top: 2px
+				+text-overflow
+			p 
+				line-height: 16px
+			.tags-list
+				margin-top: 7px
+		.box-rating
+			margin: 31px -18px 0
+			padding: 11px 18px
+			border-top: 1px solid $color-default
+		.box-button
+			margin: 0 -18px
+			padding: 10px 18px
+			height: 69px
+			padding-top: 28px
+			border-bottom: 1px solid $color-default
+			&:last-child 
+				border-bottom: none
+		.link-group
+			overflow: hidden
+			margin: 0 -18px
+			padding: 0
+			border-top: 1px solid $color-default
+			border-bottom: 1px solid $color-default
+			&__item
+				float: left
+				width: 50%
+				padding: 10px 18px
+				&:first-child 
+					border-right: 1px solid $color-default
+
+
+/* 7. FOOTER
+/* ================================================ */
+footer
+	text-align: left
+	//position: absolute
+	//left: 0px
+	//bottom: 0px
+	//bottom: 0px
+	z-index: 1
+	width: 100%
+	min-width: 320px
+	p, h4 
+		color: rgba(0,0,0,0.6)
+	p 
+		line-height: 17px
+		word-break: break-all
+
+.footer 
+	&-wrapper 
+		margin: 0 -10px
+		overflow: hidden
+	&-bottom
+		margin-top: 45px
+		padding-bottom: 10px
+		overflow: hidden
+		p 
+			line-height: 17px
+			word-break: normal
+	&__item 
+		float: left
+		padding: 0 10px
+		
+		&.col-1
+			width: 33%
+		&.col-2
+			width: 16.5%
+		&.col-3
+			width: 21.5%
+		&.col-4
+			width: 29%
+	&__title 
+		padding-bottom: 0
+		color: rgba(0,0,0,0.5)
+	&-nav 
+		padding-top: 8px
+		&__item
+			line-height: 20px
+			margin-bottom: 3px
+		&__link 
+			color: rgba(0,0,0,0.6)
+			border-bottom: 1px solid transparent
+			&:hover 
+				border-bottom: 1px solid
+
+.subscribe
+	position: relative
+	margin: 5px 0 -5px
+	input.subscribe__input 
+		height: 30px
+		padding-right: 125px
+		font-size: 14px
+		color: rgba(0,0,0,0.6)
+		border: none
+		border-radius: 0
+		+placeholder 
+			font-size: 14px
+			color: rgba(0,0,0,0.6)
+
+	&__button
+		position: absolute
+		top: 0
+		right: 0
+		height: 100%
+		padding: 0 11px 2px
+		font-size: 13px
+		color: #fff
+		border: none
+		background-color: #000
+		&:hover
+			background: #555
+
+.social
+	&__item
+		display: inline-block
+		vertical-align: top 
+		margin-right: 13px
+	&__link 
+		display: block
+		height: 28px
+		width: 28px
+		padding-top: 7px
+		color: #fff
+		text-align: center
+		text-decoration: none
+		+br(50%)
+		&:hover 
+			text-decoration: none
+		&_tw
+			background-color: #7b7b7b
+			&:hover
+				background-color: #00ABF0
+		&_pin
+			background-color: #8a8a8a
+			&:hover
+				background-color: #CD1C1F
+		&_fb
+			background-color: #656565
+			&:hover
+				background-color: #314A83
+		&_gp
+			background-color: #8a8a8a
+			&:hover
+				background-color: #DF4A32
+		&_lin
+			background-color: #6e6e6e
+			&:hover
+				background-color: #127BB6
+		&_ut
+			background-color: #8a8a8a
+			&:hover
+				background-color: #FE3432
+		&_vk
+			background-color: #7c7c7c
+			&:hover
+				background-color: #4C75A3
+
+.social-wrap
+	overflow: hidden
+	margin: 4px -22px
+	&__item 
+		float: left
+		width: 33.33%
+		text-align: center
+		& + .social-wrap__item
+			border-left: 1px solid #fff
+	&__link 
+		display: block
+		height: 53px
+		padding: 16px
+		text-align: center
+		color: #fff
+		font-size: 20px
+		.fa
+			+tr(all 0.25s)
+		&:hover .fa
+			+scale(1.4)
+		&.fb 
+			background-color: #335397
+		&.vk 
+			background-color: #507299
+		&.gp 
+			background-color: #DD4A38
+
