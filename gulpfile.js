@@ -109,4 +109,4 @@ gulp.task('deploy-copy',  function () {
     ]).pipe(gulp.dest('../src/AppBundle/Resources/public'));
 });
 
-gulp.task('default', ['jade', 'watch'], browserSync.reload);
+gulp.task('default', ['build', 'jade', 'watch'], browserSync.reload);
