@@ -2123,6 +2123,9 @@ footer {
   padding: 0 10px; }
   .footer__item.col-1 {
     width: 33%; }
+    @media (max-width: 991px) {
+      .footer__item.col-1 {
+        width: 100%; } }
   .footer__item.col-2 {
     width: 16.5%; }
   .footer__item.col-3 {
