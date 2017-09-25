@@ -2695,7 +2695,8 @@ footer {
         width: 33.33%; } }
     @media (max-width: 543px) {
       .footer__item.col-2 {
-        width: 50%; } }
+        width: 50%;
+        text-align: left; } }
   .footer__item.col-3 {
     width: 21.5%; }
     @media (max-width: 991px) {
@@ -2703,7 +2704,8 @@ footer {
         width: 33.33%; } }
     @media (max-width: 543px) {
       .footer__item.col-3 {
-        width: 50%; } }
+        width: 50%;
+        text-align: right; } }
   .footer__item.col-4 {
     width: 29%; }
     @media (max-width: 991px) {
