@@ -832,18 +832,31 @@ header
 	padding: 152px 0 80px
 	text-align: center
 	background: #8a8a8a
+	overflow: hidden
 	&__title 
 		color: #fff
 		text-transform: uppercase
 	h2.heading__title 
 		font-size: 115px
 		line-height: 100px
+
+		@include media("<lg")
+			font-size: 90px
+
+		@include media("<md")
+			font-size: 55px
 	h1.heading__title
 		padding-top: 0
 		padding-bottom: 4px
 		font-size: 148px
 		line-height: 118px
 		font-weight: 700
+		
+		@include media("<lg")
+			font-size: 115px
+
+		@include media("<md")
+			font-size: 75px
 
 .banner 
 	background: #fff
@@ -886,6 +899,8 @@ header
 		display: inline-block
 		vertical-align: top
 		margin-right: 24px
+		margin-top: 5px
+		margin-bottom: 5px
 		&.active .nav-tabs-list__link, 
 		a:hover, &.active .link 
 			color: #000
@@ -979,6 +994,14 @@ header
 		&:hover .product-list__ajax
 			display: block
 
+		@include media("<lg")
+			width: 25%
+
+		@include media("<md")
+			width: 33.333%
+
+		@include media("<sm")
+			width: 50%
 
 	&__ajax
 		display: none
@@ -1692,7 +1715,7 @@ footer
 			@include media("<lg")
 				width: 33.33%
 
-			@include media("<sm")
+			@include media("<md")
 				width: 50%
 				text-align: left
 		&.col-3
@@ -1701,7 +1724,7 @@ footer
 			@include media("<lg")
 				width: 33.33%
 
-			@include media("<sm")
+			@include media("<md")
 				width: 50%
 				text-align: right
 		&.col-4
@@ -1710,7 +1733,7 @@ footer
 			@include media("<lg")
 				width: 33.33%
 
-			@include media("<sm")
+			@include media("<md")
 				width: 100%
 				text-align: center
 	&__title 
