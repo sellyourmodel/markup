@@ -19,14 +19,12 @@ body.fixed-header
 
 .main-wrapper
 	padding: 0 0 0 0
-	min-width: 1210px
 	position: relative
-	
 	min-height: 100%
 
 
 .wrapper
-	width: 1210px
+	max-width: 1210px
 	padding: 0 10px 0 10px
 	margin: 0 auto
 	position: relative
@@ -1672,7 +1670,7 @@ footer
 		margin: 0 -10px
 		overflow: hidden
 	&-bottom
-		margin-top: 45px
+		margin-top: 10px
 		padding-bottom: 10px
 		overflow: hidden
 		p 
@@ -1684,12 +1682,35 @@ footer
 		
 		&.col-1
 			width: 33%
+
+			@include media("<lg")
+				width: 100%
+				text-align: center
 		&.col-2
 			width: 16.5%
+
+			@include media("<lg")
+				width: 33.33%
+
+			@include media("<sm")
+				width: 50%
 		&.col-3
 			width: 21.5%
+
+			@include media("<lg")
+				width: 33.33%
+
+			@include media("<sm")
+				width: 50%
 		&.col-4
 			width: 29%
+
+			@include media("<lg")
+				width: 33.33%
+
+			@include media("<sm")
+				width: 100%
+				text-align: center
 	&__title 
 		padding-bottom: 0
 		color: rgba(0,0,0,0.5)
@@ -1736,6 +1757,7 @@ footer
 		display: inline-block
 		vertical-align: top 
 		margin-right: 13px
+		margin-bottom: 13px
 	&__link 
 		display: block
 		height: 28px
