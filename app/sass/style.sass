@@ -494,7 +494,7 @@ header
 		position: fixed
 		top: 0
 		margin-top: 0
-		min-height: 50px
+		// min-height: 50px
 		.header-top
 			border-bottom: 1px solid $color-default
 		.box-nav-list
@@ -545,6 +545,9 @@ header
 				padding-left: 20px
 			&.add-models
 				width: 152px
+
+				@include media("<md")
+					display: none
 			&.link-login
 				width: 110px
 			&.link-registr
@@ -554,13 +557,17 @@ header
 			&.mini-profile
 				width: 182px
 				padding: 0
+				
+				@include media("<md")
+					width: auto
+
 			&.search 
 				padding: 0
 				&:hover
 					background-color: transparent
 
 .header-top
-	height: 50px
+	// height: 50px
 	padding: 14px 20px
 	background: #fff
 	+clr
@@ -571,13 +578,21 @@ header
 	font-size: 23px
 	line-height: 20px
 	text-transform: uppercase
+
 	&__svg
 		width: 180px
+
 	strong 
 		font-weight: 600
 
-.box-nav-list 
+.box-nav-list
+	+clr
 	float: right
+
+	@include media("<md")
+		width: 100%
+		float: left
+		margin-top: 10px
 
 // navigation
 .nav-list
@@ -588,6 +603,18 @@ header
 		vertical-align: top
 		margin-right: -4px
 		padding: 0 10px 0 9px
+
+		&_lang
+			float: right
+
+		@include media("<sm")
+			width: 100%
+			float: left
+			display: block
+			padding: 10px
+
+			&_lang
+				width: auto
 		
 	&__link 
 		display: block
@@ -682,7 +709,7 @@ header
 
 
 // mini profile
-.mini-profile 
+.mini-profile
 	&__img 
 		position: relative
 		z-index: 2
@@ -695,6 +722,12 @@ header
 		img 
 			display: inline-block
 			vertical-align: middle
+			
+		@include media("<md")
+			display: block
+			width: auto
+			min-width: 50px
+
 	&__link 
 		display: inline-block
 		vertical-align: middle
@@ -722,6 +755,10 @@ header
 			top: 50%
 			right: 15px
 			margin-top: -7px
+
+		@include media("<md")
+			display: none
+		
 	&.active 
 		background-color: #f7f7f7
 
@@ -746,6 +783,12 @@ header
 		z-index: 5
 		position: relative
 		background-color: #f7f7f7
+
+		@include media("<sm")
+			max-height: 40vh
+			overflow: hidden
+			overflow-y: scroll
+
 		&__cell 	
 			// display: table-cell
 			float: left
@@ -755,6 +798,9 @@ header
 
 			@include media("<md")
 				width: 33%
+
+			@include media("<sm")
+				width: 50%
 
 			// &:last-child
 			// 	width: 245px
@@ -785,12 +831,27 @@ header
 			border-bottom-color: transparent
 	&-wrap
 		overflow: hidden
-		margin-right: 180px
+		// margin-right: 180px
+		width: 75%
+		float: left
+		
+		@include media("<md")
+			width: 100%
 	&__item
 		float: left
 		width: 33.33%
 		padding: 18px 22px 0
 		border-right: 1px solid $color-default
+
+		@include media("<md")
+			&_loaded,
+			&_sales
+				width: 50%
+			
+			&_available
+				width: 100%
+				border-top: 1px solid $color-default
+
 	&__count 
 		padding: 10px 0 7px
 		color: #000
@@ -803,9 +864,14 @@ header
 		padding: 15px
 		border-top: 1px solid $color-default
 	&-list 
-		width: 180px
+		width: 25%
 		float: right
 		padding: 18px 22px
+		
+		@include media("<md")
+			width: 100%
+			border-top: 1px solid $color-default
+
 		&__item 
 			margin-bottom: 9px
 			&:last-child 

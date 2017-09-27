@@ -11,7 +11,7 @@ header
 					li.nav-list__item: a.nav-list__link(href="#"): span Продавайте 3D модели
 					li.nav-list__item: a.nav-list__link(href="#"): span Сообщество
 					li.nav-list__item: a.nav-list__link(href="#"): span Поддержка
-					li.nav-list__item
+					li.nav-list__item.nav-list__item_lang
 						a.nav-list__link.arrow-down.js-link-open(href="#", data-target="#box-lang")
 							span Язык:
 							span.nav-list__icon: span.ic.ic_flag-ru
@@ -152,7 +152,7 @@ header
 
 			div.nav-profile.js-open-block#nav-profile
 				div.nav-profile-wrap
-					div.nav-profile__item
+					div.nav-profile__item.nav-profile__item_loaded
 						div.nav-profile__title: a(href="#") Загруженные модели
 						div.nav-profile__count 10
 						div.nav-profile__footer       
@@ -163,7 +163,7 @@ header
 								a(href="#") Коментарии
 								span.kbd 100 / 3
 
-					div.nav-profile__item
+					div.nav-profile__item.nav-profile__item_sales
 						div.nav-profile__title
 							a(href="#") Текущие продажи
 							span.simbol ?
@@ -173,7 +173,7 @@ header
 								a(href="#") Общие продажи
 								span.kbd $100
 
-					div.nav-profile__item
+					div.nav-profile__item.nav-profile__item_available
 						div.nav-profile__title
 							a(href="#") Доступно моделей
 							span.simbol ?
