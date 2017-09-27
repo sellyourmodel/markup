@@ -86,7 +86,7 @@ span.kbd
 
 ol
 	list-style-position: inside
-	line-height: 18px
+	line-height: 1.6em
 
 table 	
 	width: 100%
@@ -137,7 +137,7 @@ table
 	white-space: nowrap !important
 ol.list
 	list-style-type: decimal
-	line-height: 17px
+	line-height: 1.6em
 
 .fl 
 	float: left !important
@@ -504,7 +504,7 @@ header
 			top: 0
 			left: 232px
 			right: 10px
-			border-left: 1px solid $color-default
+			// border-left: 1px solid $color-default
 			border-top: none
 			border-bottom: 1px solid $color-default
 		.navigation,
@@ -515,7 +515,7 @@ header
 // header bottom
 .header	
 	&-bottom
-		height: 50px
+		// height: 50px
 		background: #fff
 		border-top: 1px solid $color-default
 	&-table 
@@ -746,6 +746,7 @@ header
 			display: block
 			max-width: 90px
 			padding-right: 10px
+			padding-left: 10px
 			overflow: hidden
 			text-overflow: ellipsis
 			white-space: nowrap
@@ -1337,12 +1338,24 @@ header
 		margin-right: 45%
 		padding: 8px 22px 22px
 		border-right: 1px solid $color-default
+
+		@include media("<md")
+			width: 100%
+			float: left
+			margin-right: 0px
 	&-right
 		float: right
 		width: 45%
 		padding: 8px 115px 22px 22px
 		margin-right: 1px
 		border-left: 1px solid $color-default
+
+		@include media("<lg")
+			padding: 25px
+
+		@include media("<md")
+			width: 100%
+			float: left
 	&.support .wrap-right,
 	&.product .wrap-right
 		padding: 8px 22px 22px 22px	
@@ -1432,8 +1445,12 @@ header
 		border-bottom: 1px solid
 
 .registration
-	margin: 30px 0 0 
+	margin: 30px 0 0
 	max-width: 282px
+
+	@include media("<md")
+		max-width: 100%
+
 	.box-form__button 
 		margin: 24px 0 14px
 

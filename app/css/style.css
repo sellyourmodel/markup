@@ -1035,7 +1035,7 @@ span.kbd {
 
 ol {
   list-style-position: inside;
-  line-height: 18px; }
+  line-height: 1.6em; }
 
 table {
   width: 100%;
@@ -1083,7 +1083,7 @@ table {
 
 ol.list {
   list-style-type: decimal;
-  line-height: 17px; }
+  line-height: 1.6em; }
 
 .fl {
   float: left !important; }
@@ -1518,7 +1518,6 @@ header {
       top: 0;
       left: 232px;
       right: 10px;
-      border-left: 1px solid #e5e5e5;
       border-top: none;
       border-bottom: 1px solid #e5e5e5; }
     header.fixed .navigation,
@@ -1527,7 +1526,6 @@ header {
       right: 0; }
 
 .header-bottom {
-  height: 50px;
   background: #fff;
   border-top: 1px solid #e5e5e5; }
 
@@ -1760,6 +1758,7 @@ header {
     display: block;
     max-width: 90px;
     padding-right: 10px;
+    padding-left: 10px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap; }
@@ -2348,12 +2347,24 @@ header {
     margin-right: 45%;
     padding: 8px 22px 22px;
     border-right: 1px solid #e5e5e5; }
+    @media (max-width: 767px) {
+      .wrap-left {
+        width: 100%;
+        float: left;
+        margin-right: 0px; } }
   .wrap-right {
     float: right;
     width: 45%;
     padding: 8px 115px 22px 22px;
     margin-right: 1px;
     border-left: 1px solid #e5e5e5; }
+    @media (max-width: 991px) {
+      .wrap-right {
+        padding: 25px; } }
+    @media (max-width: 767px) {
+      .wrap-right {
+        width: 100%;
+        float: left; } }
   .wrap.support .wrap-right,
   .wrap.product .wrap-right {
     padding: 8px 22px 22px 22px; }
@@ -2437,6 +2448,9 @@ header {
 .registration {
   margin: 30px 0 0;
   max-width: 282px; }
+  @media (max-width: 767px) {
+    .registration {
+      max-width: 100%; } }
   .registration .box-form__button {
     margin: 24px 0 14px; }
 
