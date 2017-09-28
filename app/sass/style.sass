@@ -1108,11 +1108,19 @@ header
 		padding-bottom: 11px
 
 .product-list 
+	+clr
 	margin: 0 0 0 -10px
 	overflow: hidden
 	&.col-4 
-		.product-list__item 
-			width: 25%
+		.product-list__item
+			@include media("<xl")
+				width: 25%
+
+			@include media("<lg")
+				width: 33.333%
+
+			@include media("<md")
+				width: 50%
 	&.col-4:not(.sm)
 		.product-list__img
 			height: 219px
@@ -1657,13 +1665,22 @@ header
 
 .content-wrap
 	float: left
-	width: 950px
+	width: 79%
 	margin-top: 10px
 	.main-wrap 
 		margin-top: 0
+
+	@include media("<xl")
+		width: 77%
+
+	@include media("<lg")
+		width: 74%
+
+	@include media("<md")
+		width: 100%
 aside 
 	float: right
-	width: 230px
+	width: 20%
 	margin-top: 10px
 	.banner 
 		margin-bottom: 10px
@@ -1677,6 +1694,15 @@ aside
 		& + .content-wrap
 			float: right
 
+	@include media("<xl")
+		width: 22%
+
+	@include media("<lg")
+		width: 25%
+
+	@include media("<md")
+		width: 100%
+		display: none
 /* PROFILE */
 
 .profile
