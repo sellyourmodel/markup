@@ -16,6 +16,10 @@ function viewport(){
 };
 $(function(){
 
+	$('.box-nav-list-burger').click(function() {
+		$(this).toggleClass('box-nav-list-burger_opened');
+	});
+
 	$('.button-nav').click(function(){
 		$(this).toggleClass('active'), 
 		$('.main-nav-list').slideToggle(); 

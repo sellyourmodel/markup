@@ -5,6 +5,8 @@ header
 		div.header-top
 			a.logo(href="#")
 				img.logo__svg(src="img/svg/logo.svg")
+			button.box-nav-list-burger
+				span Открыть меню
 			nav.box-nav-list
 				ul.nav-list.unstyled
 					li.nav-list__item: a.nav-list__link(href="#"): span О нас
@@ -24,19 +26,21 @@ header
 		div.header-bottom
 			div.header-table
 				a.header-table__item.js-link-open.models(href="#", data-target="#nav")
-					span.models__text.arrow-down 3D models
+					span.models__text.arrow-down
+						span 3D models
 				div.header-table__item.search
 					form 
 						input.search__input.form-control(type="text", placeholder="Поиск")
 						input.search__button(type="submit", value="")
 				
-				a.header-table__item.link-login.fancybox(href="#login"): span Войти 
-				a.header-table__item.link-registr(href="#"): span Регистрация
+				//- a.header-table__item.link-login.fancybox(href="#login"): span Войти 
+				//- a.header-table__item.link-registr(href="#"): span Регистрация
 				
-				div.header-table__item.mini-profile.hidden
+				div.header-table__item.mini-profile.js-link-open.active(data-target="#nav-profile")
 					a.mini-profile__img(href="#"): img(src="img/user.png", alt="")
-					a.mini-profile__link.js-link-open(href="#", data-target="#nav-profile") 
-						span.arrow-down Alexander
+					a.mini-profile__link(href="#") 
+						span.arrow-down.mini-profile__link-login-wrapper
+							span.mini-profile__link-login-name Иванов Алексей
 							span.ic.ic_models-two
 
 			div#nav.navigation.js-open-block

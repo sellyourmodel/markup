@@ -4,6 +4,8 @@ header
 		div.header-top
 			a.logo(href="#")
 				img.logo__svg(src="img/svg/logo.svg")
+			button.box-nav-list-burger
+				span Открыть меню
 			nav.box-nav-list
 				ul.nav-list.unstyled
 					li.nav-list__item: a.nav-list__link(href="#"): span О нас
@@ -23,7 +25,8 @@ header
 		div.header-bottom
 			div.header-table
 				a.header-table__item.js-link-open.models(href="#", data-target="#nav")
-					span.models__text.arrow-down 3D models
+					span.models__text.arrow-down
+						span 3D models
 				div.header-table__item.search
 					form 
 						input.search__input.form-control(type="text", placeholder="Поиск")

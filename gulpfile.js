@@ -35,7 +35,13 @@ gulp.task('compile-css', function() {
 		'app/css/style.css',
 		'app/css/libs.min.css',
 	])
-	.pipe(gulp.dest('dist/css'));
+		.pipe(gulp.dest('dist/css'));
+});
+
+gulp.task('compile-js', function() {
+	return gulp.src('app/js/**/*')
+		.pipe(gulp.dest('dist/js'))
+		.pipe(browserSync.reload({stream: true}));
 });
 
 gulp.task('scripts', function() {
@@ -94,18 +100,14 @@ return gulp.src('app/img/**/*')
 
 gulp.task('watch', ['browser-sync', 'css-libs', 'scripts'], function() {
 gulp.watch('app/sass/**/*.sass', ['sass', 'css-libs', 'compile-css']);
-gulp.watch('app/js/**/*.js', browserSync.reload);
+gulp.watch('app/js/**/*.js', ['compile-js']);
 gulp.watch('app/templates/**/*.jade', ['jade']);
 });
 
 
-gulp.task('build', ['clean', 'img', 'sass', 'compile-css', 'scripts', 'jade'], function(){
-var buidFonts = gulp.src('app/fonts/**/*')
-.pipe(gulp.dest('dist/fonts'));
-
-var buildJs = gulp.src('app/js/**/*')
-.pipe(gulp.dest('dist/js'));
-
+gulp.task('build', ['clean', 'img', 'sass', 'compile-css', 'compile-js', 'scripts', 'jade'], function() {
+	var buidFonts = gulp.src('app/fonts/**/*')
+		.pipe(gulp.dest('dist/fonts'));
 });
 
 gulp.task('deploy-copy',  function () {
