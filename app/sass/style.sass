@@ -357,14 +357,18 @@ label
 
 .box-field-group
 	+clr
-	.box-field 
-		float: left
-		& + .box-field 
-			margin-left: 4%
-		
+	width: 100%
 
-.box-field 
+.box-field
+	float: left
 	margin-bottom: 15px
+
+	+ .box-field
+		margin-left: 15px
+
+		@include media("<md")
+			margin-left: 0px
+
 	&.col-5 
 		width: 61%
 	&.col-4 
@@ -375,12 +379,14 @@ label
 		width: 23%
 	&.col-1 
 		width: 13.5%
+
 	input,
 	textarea, 
 	select
 		margin-bottom: 0 !important
 
-
+	@include media("<md")
+		width: 100% !important
 
 
 .checkbox, .radio
@@ -477,6 +483,14 @@ label
 		.box-field__input + .box-field__input
 			margin-top: 23px
 
+	@include media("<sm")
+		&__choose-file
+			margin-left: 0px !important
+			float: left !important
+			width: 100% !important
+
+			.help-text
+				margin-left: 0px !important
  
 /* 4. HEADER
 /* ================================================ */
@@ -1418,8 +1432,18 @@ header
 	&_small 
 		.wrap-left
 			margin-right: 29%
+			
+			@include media("<md")
+				width: 100%
+				float: left
+				margin-right: 0px
+
 		.wrap-right
 			width: 29%
+			
+			@include media("<md")
+				width: 100%
+				float: left
 	&.product
 		.wrap-left 
 			margin-right: 39%

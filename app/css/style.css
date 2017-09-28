@@ -1379,18 +1379,21 @@ label {
     border: none; }
 
 .box-field-group {
-  *zoom: 1; }
+  *zoom: 1;
+  width: 100%; }
   .box-field-group:after {
     content: " ";
     display: table;
     clear: both; }
-  .box-field-group .box-field {
-    float: left; }
-    .box-field-group .box-field + .box-field {
-      margin-left: 4%; }
 
 .box-field {
+  float: left;
   margin-bottom: 15px; }
+  .box-field + .box-field {
+    margin-left: 15px; }
+    @media (max-width: 767px) {
+      .box-field + .box-field {
+        margin-left: 0px; } }
   .box-field.col-5 {
     width: 61%; }
   .box-field.col-4 {
@@ -1405,6 +1408,9 @@ label {
   .box-field textarea,
   .box-field select {
     margin-bottom: 0 !important; }
+  @media (max-width: 767px) {
+    .box-field {
+      width: 100% !important; } }
 
 .checkbox label, .radio label {
   margin-left: -20px;
@@ -1495,6 +1501,13 @@ label {
       width: 100%; }
   .user__add-avatar .box-field__input + .box-field__input {
     margin-top: 23px; }
+  @media (max-width: 543px) {
+    .user__choose-file {
+      margin-left: 0px !important;
+      float: left !important;
+      width: 100% !important; }
+      .user__choose-file .help-text {
+        margin-left: 0px !important; } }
 
 /* 4. HEADER */
 /* ================================================ */
@@ -2422,8 +2435,17 @@ header {
         border-bottom: 1px solid; }
   .wrap_small .wrap-left {
     margin-right: 29%; }
+    @media (max-width: 767px) {
+      .wrap_small .wrap-left {
+        width: 100%;
+        float: left;
+        margin-right: 0px; } }
   .wrap_small .wrap-right {
     width: 29%; }
+    @media (max-width: 767px) {
+      .wrap_small .wrap-right {
+        width: 100%;
+        float: left; } }
   .wrap.product .wrap-left {
     margin-right: 39%; }
   .wrap.product .wrap-right {
