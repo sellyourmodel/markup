@@ -349,6 +349,7 @@ label
 	.jq-selectbox
 		display: inline-block
 		vertical-align: top
+		float: left
 		
 		&.col-3
 			width: 33.33%
@@ -1223,7 +1224,7 @@ header
 		font-size: 12px
 		line-height: 14px
 		color: rgba(0,0,0, 0.5)
-		
+
 	&__icon 
 		display: inline-block
 		vertical-align: top
@@ -1396,6 +1397,10 @@ header
 		h1
 			display: inline-block
 
+			@include media("<md")
+				width: 100%
+				float: left
+
 		.box-select-group
 			+clr
 			height: 100px
@@ -1407,7 +1412,7 @@ header
 			margin: -29px -13px -29px 0
 			padding: 35px 0 31px 44px
 
-			@include media("<sm")
+			@include media("<md")
 				float: left
 				margin: 0
 				padding: 0
@@ -1530,7 +1535,12 @@ header
 		border-bottom: none
 	&__title 
 		padding-bottom: 4px
-		a:hover 
+
+		@include media("<sm")
+			+text-overflow
+			padding-bottom: 8px
+
+		a:hover
 			color: $color-warning
 	&__body 
 		img 
@@ -1542,10 +1552,20 @@ header
 	
 	.product-panel__icon 
 		margin-left: 11px
+
+		&:first-child
+			margin-left: 0px
+
 	.product-panel__item
 		float: none
 		margin-left: 10px
 		font-size: 14px
+
+		@include media("<sm")
+			float: left
+			margin-top: 10px
+			margin-left: 0px
+
 		.fa 
 			color: $color-warning
 
@@ -1562,10 +1582,13 @@ header
 		margin-left: 64px
 		padding-top: 3px
 
-.date 
+.date
 	display: inline-block
 	vertical-align: middle
 	color: rgba(0,0,0,0.5)
+
+	@include media("<sm")
+		width: 100%
 
 .more 
 	color: rgba(0,0,0,0.5)
