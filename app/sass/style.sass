@@ -267,11 +267,17 @@ ol.list
 		width: 182px
 		margin-top: 30px
 		margin-bottom: 5px
-.box-button 
-	margin: 12px 0 
+.box-button
+	a
+		float: left
+	
+	margin: 12px 0
+
 	.button + .button-info 
 		display: inline-block
-		margin-left: 20px
+		float: left
+		width: 100%
+		padding-top: 15px
 
 input.button,
 button.button 
@@ -359,15 +365,16 @@ label
 	+clr
 	width: 100%
 
+	.box-field
+		+ .box-field
+			margin-left: 15px
+
+			@include media("<md")
+				margin-left: 0px
+
 .box-field
 	float: left
 	margin-bottom: 15px
-
-	+ .box-field
-		margin-left: 15px
-
-		@include media("<md")
-			margin-left: 0px
 
 	&.col-5 
 		width: 61%
@@ -1017,9 +1024,25 @@ header
 	background: #fff 
 	border-bottom: 1px solid $color-default
 	&__link 
-		margin-left: 40px
+		float: right
 		font-size: 14px
 		line-height: 18px
+
+		@include media("<sm")
+			text-decoration: none
+			border-bottom: none
+
+	&__link-full
+		@include media("<sm")
+			display: none
+
+	&__link-plus
+		display: none
+		font-weight: bold
+		font-size: 26px
+
+		@include media("<sm")
+			display: block
 	&.sm 
 		height: 50px
 		padding: 7px 22px
@@ -1102,7 +1125,7 @@ header
 	&-info 
 		margin: -8px 26px
 		position: relative
-		padding: 49px 0
+		padding-top: 49px
 	p 
 		line-height: 16px
 		padding-bottom: 11px
@@ -1329,7 +1352,16 @@ header
 	padding: 20px 40px
 	margin: 0 -22px
 .comment
-	padding: 22px 0
+	width: 61%
+	float: left
+	padding: 22px
+	border-right: 1px solid $color-default
+
+	@include media("<lg")
+		width: 100%
+		border: none
+		border-top: 1px solid $color-default
+
 	.author
 		font-size: 14px
 		a 
@@ -1356,10 +1388,16 @@ header
 	margin-top: 10px
 	background: #fff
 	&__header
-		height: 100px
+		+clr
+		min-height: 100px
 		padding: 29px 22px
 		border-bottom: 1px solid $color-default
+
+		h1
+			display: inline-block
+
 		.box-select-group
+			+clr
 			height: 100px
 			white-space: nowrap
 			
@@ -1368,6 +1406,13 @@ header
 
 			margin: -29px -13px -29px 0
 			padding: 35px 0 31px 44px
+
+			@include media("<sm")
+				float: left
+				margin: 0
+				padding: 0
+				height: auto
+
 			.jq-selectbox__dropdown
 				min-width: 120px
 			.jq-selectbox__select
@@ -1392,10 +1437,11 @@ header
 		margin-bottom: 10px
 	&.catalog 
 		.box-select-group
-			border-left: 1px solid $color-default
+			// border-left: 1px solid $color-default
 
 
 .wrap 
+	+clr
 	overflow: hidden 
 	&-left
 		margin-right: 45%
@@ -1453,10 +1499,20 @@ header
 				width: 100%
 				float: left
 	&.product
-		.wrap-left 
-			margin-right: 39%
+		.wrap-left
+			float: left
+			width: 61%
+			margin: 0
+
+			@include media("<lg")
+				width: 100%
 		.wrap-right
 			width: 39%
+			margin: 0
+			border: none
+
+			@include media("<lg")
+				width: 100%
 
 
 .column 
@@ -1621,7 +1677,8 @@ header
 
 .pagination
 	height: 100px
-	padding: 25px 25px 10px
+	padding-top: 25px
+	padding-bottom: 25px
 	background: #fff
 	margin: 10px 0
 	text-align: center

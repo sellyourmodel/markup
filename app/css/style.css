@@ -1226,9 +1226,13 @@ ol.list {
 
 .box-button {
   margin: 12px 0; }
+  .box-button a {
+    float: left; }
   .box-button .button + .button-info {
     display: inline-block;
-    margin-left: 20px; }
+    float: left;
+    width: 100%;
+    padding-top: 15px; }
 
 input.button,
 button.button {
@@ -1385,15 +1389,15 @@ label {
     content: " ";
     display: table;
     clear: both; }
+  .box-field-group .box-field + .box-field {
+    margin-left: 15px; }
+    @media (max-width: 767px) {
+      .box-field-group .box-field + .box-field {
+        margin-left: 0px; } }
 
 .box-field {
   float: left;
   margin-bottom: 15px; }
-  .box-field + .box-field {
-    margin-left: 15px; }
-    @media (max-width: 767px) {
-      .box-field + .box-field {
-        margin-left: 0px; } }
   .box-field.col-5 {
     width: 61%; }
   .box-field.col-4 {
@@ -2012,9 +2016,23 @@ header {
   background: #fff;
   border-bottom: 1px solid #e5e5e5; }
   .block-title__link {
-    margin-left: 40px;
+    float: right;
     font-size: 14px;
     line-height: 18px; }
+    @media (max-width: 543px) {
+      .block-title__link {
+        text-decoration: none;
+        border-bottom: none; } }
+  @media (max-width: 543px) {
+    .block-title__link-full {
+      display: none; } }
+  .block-title__link-plus {
+    display: none;
+    font-weight: bold;
+    font-size: 26px; }
+    @media (max-width: 543px) {
+      .block-title__link-plus {
+        display: block; } }
   .block-title.sm {
     height: 50px;
     padding: 7px 22px; }
@@ -2095,7 +2113,7 @@ header {
 .product-info {
   margin: -8px 26px;
   position: relative;
-  padding: 49px 0; }
+  padding-top: 49px; }
 
 .product p {
   line-height: 16px;
@@ -2341,7 +2359,15 @@ header {
   margin: 0 -22px; }
 
 .comment {
-  padding: 22px 0; }
+  width: 61%;
+  float: left;
+  padding: 22px;
+  border-right: 1px solid #e5e5e5; }
+  @media (max-width: 991px) {
+    .comment {
+      width: 100%;
+      border: none;
+      border-top: 1px solid #e5e5e5; } }
   .comment .author {
     font-size: 14px; }
     .comment .author a {
@@ -2369,16 +2395,34 @@ header {
   margin-top: 10px;
   background: #fff; }
   .main-wrap__header {
-    height: 100px;
+    *zoom: 1;
+    min-height: 100px;
     padding: 29px 22px;
     border-bottom: 1px solid #e5e5e5; }
+    .main-wrap__header:after {
+      content: " ";
+      display: table;
+      clear: both; }
+    .main-wrap__header h1 {
+      display: inline-block; }
     .main-wrap__header .box-select-group {
+      *zoom: 1;
       height: 100px;
       white-space: nowrap;
       border: none;
       float: right;
       margin: -29px -13px -29px 0;
       padding: 35px 0 31px 44px; }
+      .main-wrap__header .box-select-group:after {
+        content: " ";
+        display: table;
+        clear: both; }
+      @media (max-width: 543px) {
+        .main-wrap__header .box-select-group {
+          float: left;
+          margin: 0;
+          padding: 0;
+          height: auto; } }
       .main-wrap__header .box-select-group .jq-selectbox__dropdown {
         min-width: 120px; }
       .main-wrap__header .box-select-group .jq-selectbox__select {
@@ -2400,11 +2444,14 @@ header {
   .main-wrap__body {
     padding: 10px 22px 23px;
     margin-bottom: 10px; }
-  .main-wrap.catalog .box-select-group {
-    border-left: 1px solid #e5e5e5; }
 
 .wrap {
+  *zoom: 1;
   overflow: hidden; }
+  .wrap:after {
+    content: " ";
+    display: table;
+    clear: both; }
   .wrap-left {
     margin-right: 45%;
     padding: 8px 22px 22px;
@@ -2459,9 +2506,19 @@ header {
         width: 100%;
         float: left; } }
   .wrap.product .wrap-left {
-    margin-right: 39%; }
+    float: left;
+    width: 61%;
+    margin: 0; }
+    @media (max-width: 991px) {
+      .wrap.product .wrap-left {
+        width: 100%; } }
   .wrap.product .wrap-right {
-    width: 39%; }
+    width: 39%;
+    margin: 0;
+    border: none; }
+    @media (max-width: 991px) {
+      .wrap.product .wrap-right {
+        width: 100%; } }
 
 .column.bg {
   background: #fff; }
@@ -2608,7 +2665,8 @@ header {
 /* PAGINATION ---- */
 .pagination {
   height: 100px;
-  padding: 25px 25px 10px;
+  padding-top: 25px;
+  padding-bottom: 25px;
   background: #fff;
   margin: 10px 0;
   text-align: center; }
