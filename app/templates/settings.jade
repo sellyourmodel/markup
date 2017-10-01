@@ -26,17 +26,18 @@ block content
 							
 							div.box-form.settings
 								form(action="#")
-									div.box-field.col-3
-										label.box-field__label Пользователь
-										div.box-field__input
-											input.form-control(type="text")
+									div.box-field-group
+										div.box-field.col-3
+											label.box-field__label Пользователь
+											div.box-field__input
+												input.form-control(type="text")
 									
 									div.box-field-group.user
 										label.box-field__label Аватар
-										div.box-field.col-1
+										div.box-field.col-2
 											div.user__avatar
 												img(src="img/user-avatar.png", alt="")
-										div.box-field.col-5
+										div.box-field.col-5.user__choose-file
 											div.user__add-avatar
 												div.box-field__input
 													input.styler(type="file", data-placeholder="Фаил невыбран", data-browse="Выберите фаил")
@@ -53,7 +54,9 @@ block content
 											label.box-field__label Фамилия
 											div.box-field__input
 												input.form-control(type="text")
-										div.box-field.col-3
+
+									div.box-field-group
+										div.box-field.col-5
 											label.box-field__label Дата рождения
 											div.box-field__input
 												div.box-select-group
@@ -100,19 +103,20 @@ block content
 														option(value="1") 2015
 														option(value="2") 2016
 												
+									div.box-field-group
+										div.box-field.col-4
+											label.box-field__label E-mail
+											div.box-field__input
+												input.form-control(type="email")
 
-									div.box-field.col-4
-										label.box-field__label E-mail
-										div.box-field__input
-											input.form-control(type="email")
-
-									div.box-field.col-1
-										label.box-field__label Пол
-										div.box-field__input
-											select.styler.form-control(data-placeholder=" ")
-												option(value="")
-												option(value="1") Мужской
-												option(value="2") Женский
+									div.box-field-group
+										div.box-field.col-1
+											label.box-field__label Пол
+											div.box-field__input
+												select.styler.form-control(data-placeholder=" ")
+													option(value="")
+													option(value="1") Мужской
+													option(value="2") Женский
 
 									div.box-field-group
 										div.box-field.col-2
@@ -130,10 +134,11 @@ block content
 													option(value="1") Русский
 													option(value="2") Украинский
 									
-									div.box-field.col-5
-										label.box-field__label Специализация:
-										div.box-field__input
-											input.form-control(type="text")
+									div.box-field-group
+										div.box-field.col-5
+											label.box-field__label Специализация:
+											div.box-field__input
+												input.form-control(type="text")
 
 									div.box-field-group
 										label.box-field__label Место проживания
@@ -149,16 +154,17 @@ block content
 													option(value="")
 													option(value="1") Россия
 													option(value="2") Украина
-
-									div.box-field.col-5
-										label.box-field__label  О себе:
-										div.box-field__input
-											textarea.form-control
-					
-									div.settings-buttons-form
-										img(src="img/buttons.png", alt="")
-		
-									button.button.button_warning(type="submit") Изменить
+									div.box-field-group
+										div.box-field.col-5
+											label.box-field__label  О себе:
+											div.box-field__input
+												textarea.form-control
+						
+									div.box-field-group
+										div.settings-buttons-form
+											img(src="img/buttons.png", alt="")
+			
+										button.button.button_warning(type="submit") Изменить
 									
 							
 				div.banner.banner_horizontal

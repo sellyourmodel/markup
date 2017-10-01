@@ -19,14 +19,12 @@ body.fixed-header
 
 .main-wrapper
 	padding: 0 0 0 0
-	min-width: 1210px
 	position: relative
-	
 	min-height: 100%
 
 
 .wrapper
-	width: 1210px
+	max-width: 1210px
 	padding: 0 10px 0 10px
 	margin: 0 auto
 	position: relative
@@ -88,7 +86,7 @@ span.kbd
 
 ol
 	list-style-position: inside
-	line-height: 18px
+	line-height: 1.6em
 
 table 	
 	width: 100%
@@ -113,6 +111,15 @@ table
 	& + .delspin
 		margin-left: 7px
 
+		@include media("<lg")
+			width: 100%
+			margin-left: 0
+			margin-top: 10px
+
+			&:first-child
+				margin-top: 0px
+
+
 /* text position */
 
 .text-left
@@ -130,7 +137,7 @@ table
 	white-space: nowrap !important
 ol.list
 	list-style-type: decimal
-	line-height: 17px
+	line-height: 1.6em
 
 .fl 
 	float: left !important
@@ -260,11 +267,17 @@ ol.list
 		width: 182px
 		margin-top: 30px
 		margin-bottom: 5px
-.box-button 
-	margin: 12px 0 
+.box-button
+	a
+		float: left
+	
+	margin: 12px 0
+
 	.button + .button-info 
 		display: inline-block
-		margin-left: 20px
+		float: left
+		width: 100%
+		padding-top: 15px
 
 input.button,
 button.button 
@@ -336,6 +349,7 @@ label
 	.jq-selectbox
 		display: inline-block
 		vertical-align: top
+		float: left
 		
 		&.col-3
 			width: 33.33%
@@ -350,14 +364,19 @@ label
 
 .box-field-group
 	+clr
-	.box-field 
-		float: left
-		& + .box-field 
-			margin-left: 4%
-		
+	width: 100%
 
-.box-field 
+	.box-field
+		+ .box-field
+			margin-left: 15px
+
+			@include media("<md")
+				margin-left: 0px
+
+.box-field
+	float: left
 	margin-bottom: 15px
+
 	&.col-5 
 		width: 61%
 	&.col-4 
@@ -368,12 +387,14 @@ label
 		width: 23%
 	&.col-1 
 		width: 13.5%
+
 	input,
 	textarea, 
 	select
 		margin-bottom: 0 !important
 
-
+	@include media("<md")
+		width: 100% !important
 
 
 .checkbox, .radio
@@ -470,6 +491,14 @@ label
 		.box-field__input + .box-field__input
 			margin-top: 23px
 
+	@include media("<sm")
+		&__choose-file
+			margin-left: 0px !important
+			float: left !important
+			width: 100% !important
+
+			.help-text
+				margin-left: 0px !important
  
 /* 4. HEADER
 /* ================================================ */
@@ -487,30 +516,14 @@ header
 		position: fixed
 		top: 0
 		margin-top: 0
-		min-height: 50px
-		.header-top
-			border-bottom: 1px solid $color-default
-		.box-nav-list
-			display: none
-		.header-bottom 
-			position: absolute
-			top: 0
-			left: 232px
-			right: 10px
-			border-left: 1px solid $color-default
-			border-top: none
-			border-bottom: 1px solid $color-default
-		.navigation,
-		.nav-profile
-			left: -223px
-			right: 0
 
 // header bottom
 .header	
 	&-bottom
-		height: 50px
+		height: 51px
 		background: #fff
 		border-top: 1px solid $color-default
+		border-bottom: 1px solid $color-default
 	&-table 
 		display: table
 		width: 100%
@@ -536,8 +549,10 @@ header
 			&.models 
 				width: 126px
 				padding-left: 20px
-			&.add-models
-				width: 152px
+
+				@include media("<sm")
+					width: 50px
+					padding: 0
 			&.link-login
 				width: 110px
 			&.link-registr
@@ -547,13 +562,17 @@ header
 			&.mini-profile
 				width: 182px
 				padding: 0
+				
+				@include media("<md")
+					width: auto
+
 			&.search 
 				padding: 0
 				&:hover
 					background-color: transparent
 
 .header-top
-	height: 50px
+	// height: 50px
 	padding: 14px 20px
 	background: #fff
 	+clr
@@ -564,13 +583,56 @@ header
 	font-size: 23px
 	line-height: 20px
 	text-transform: uppercase
+
 	&__svg
 		width: 180px
+
 	strong 
 		font-weight: 600
 
-.box-nav-list 
+	@include media("<sm")
+		position: relative
+		top: 8px
+
+.box-nav-list-burger
 	float: right
+	outline: none
+	border: none	
+	display: inline-block
+	vertical-align: middle
+	width: 32px
+	height: 32px
+	background-color: transparent
+	background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjMycHgiIGhlaWdodD0iMzJweCIgdmlld0JveD0iMCAwIDM0NC4zMzkgMzQ0LjMzOSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMzQ0LjMzOSAzNDQuMzM5OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnPgoJPGc+CgkJPGc+CgkJCTxyZWN0IHk9IjQ2LjA2IiB3aWR0aD0iMzQ0LjMzOSIgaGVpZ2h0PSIyOS41MiIgZmlsbD0iIzAwMDAwMCIvPgoJCTwvZz4KCQk8Zz4KCQkJPHJlY3QgeT0iMTU2LjUwNiIgd2lkdGg9IjM0NC4zMzkiIGhlaWdodD0iMjkuNTIiIGZpbGw9IiMwMDAwMDAiLz4KCQk8L2c+CgkJPGc+CgkJCTxyZWN0IHk9IjI2OC43NDgiIHdpZHRoPSIzNDQuMzM5IiBoZWlnaHQ9IjI5LjUzMSIgZmlsbD0iIzAwMDAwMCIvPgoJCTwvZz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K)
+	background-size: 26px 26px
+	background-repeat: no-repeat
+	background-position: center center
+	opacity: .5
+	display: none
+
+	&_opened
+		background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAzNzEuMjMgMzcxLjIzIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAzNzEuMjMgMzcxLjIzOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjMycHgiIGhlaWdodD0iMzJweCI+Cjxwb2x5Z29uIHBvaW50cz0iMzcxLjIzLDIxLjIxMyAzNTAuMDE4LDAgMTg1LjYxNSwxNjQuNDAyIDIxLjIxMywwIDAsMjEuMjEzIDE2NC40MDIsMTg1LjYxNSAwLDM1MC4wMTggMjEuMjEzLDM3MS4yMyAgIDE4NS42MTUsMjA2LjgyOCAzNTAuMDE4LDM3MS4yMyAzNzEuMjMsMzUwLjAxOCAyMDYuODI4LDE4NS42MTUgIiBmaWxsPSIjMDAwMDAwIi8+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=)
+
+		+ .box-nav-list
+			display: block
+
+	span
+		display: none
+
+	@include media("<sm")
+		display: block
+
+.box-nav-list
+	+clr
+	float: right
+
+	@include media("<md")
+		width: 100%
+		float: left
+		margin-top: 10px
+	
+	@include media("<sm")
+		display: none
 
 // navigation
 .nav-list
@@ -581,6 +643,23 @@ header
 		vertical-align: top
 		margin-right: -4px
 		padding: 0 10px 0 9px
+
+		&_lang
+			float: right
+
+			.arrow-down
+				width: auto
+				height: auto
+				background-position: center right
+
+		@include media("<sm")
+			width: 100%
+			float: left
+			display: block
+			padding: 10px
+
+			&_lang
+				width: auto
 		
 	&__link 
 		display: block
@@ -612,14 +691,25 @@ header
 .arrow-down 
 	display: block
 	padding-right: 16px
-	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAGCAYAAAAVMmT4AAAANklEQVQoU2NkYGD4zwABjFAaGwVWA1OATwNcDtk0bBpQxNCtRpbE0IzNnTBFGP7A5SmQBgw5AALrCgbjsJcXAAAAAElFTkSuQmCC") no-repeat right center
+	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAGCAYAAAAVMmT4AAAANklEQVQoU2NkYGD4zwABjFAaGwVWA1OATwNcDtk0bBpQxNCtRpbE0IzNnTBFGP7A5SmQBgw5AALrCgbjsJcXAAAAAElFTkSuQmCC")
+	background-repeat: no-repeat
+	background-position: right center
+	
+	@include media("<sm")
+		padding: 0
+		width: 50px
+		height: 26px
+		background-position: center center
 
 .models 
-	&.active 
+	&.active
 		background-color: #f7f7f7
 	&__text
 		display: block
-	
+
+		@include media("<sm")
+			span
+				display: none
 // Search	
 .search 
 	form 
@@ -675,7 +765,7 @@ header
 
 
 // mini profile
-.mini-profile 
+.mini-profile
 	&__img 
 		position: relative
 		z-index: 2
@@ -688,6 +778,12 @@ header
 		img 
 			display: inline-block
 			vertical-align: middle
+			
+		@include media("<md")
+			display: block
+			width: auto
+			min-width: 50px
+
 	&__link 
 		display: inline-block
 		vertical-align: middle
@@ -706,6 +802,7 @@ header
 			display: block
 			max-width: 90px
 			padding-right: 10px
+			padding-left: 10px
 			overflow: hidden
 			text-overflow: ellipsis
 			white-space: nowrap
@@ -715,6 +812,10 @@ header
 			top: 50%
 			right: 15px
 			margin-top: -7px
+
+		@include media("<md")
+			display: none
+		
 	&.active 
 		background-color: #f7f7f7
 
@@ -728,7 +829,7 @@ header
 	right: 10px
 	border-top: 1px solid $color-default
 	background-color: #f7f7f7
-	z-index: 75
+	z-index: 101
 
 .navigation
 	z-index: 100 !important
@@ -739,21 +840,36 @@ header
 		z-index: 5
 		position: relative
 		background-color: #f7f7f7
+
+		@include media("<sm")
+			max-height: 40vh
+			overflow: hidden
+			overflow-y: scroll
+
 		&__cell 	
-			display: table-cell
-			width: 229px
+			// display: table-cell
+			float: left
+			width: 20%
 			padding: 16px 10px 25px
 			border-right: 1px solid $color-default
-			&:last-child
-				width: 245px
-				border-right: none
-				padding-right: 20px
-			&:first-child 
-				padding-left: 20px
-			&:first-child 
-				width: 251px
+
+			@include media("<md")
+				width: 33%
+
+			@include media("<sm")
+				width: 50%
+
+			// &:last-child
+			// 	width: 245px
+			// 	border-right: none
+			// 	padding-right: 20px
+			// &:first-child 
+			// 	padding-left: 20px
+			// &:first-child 
+			// 	width: 251px
 	&__title 
 		padding-bottom: 0px
+		margin-bottom: 7px
 	&-list 
 		margin-bottom: 10px
 		&__item 
@@ -772,12 +888,34 @@ header
 			border-bottom-color: transparent
 	&-wrap
 		overflow: hidden
-		margin-right: 180px
+		// margin-right: 180px
+		width: 75%
+		float: left
+		
+		@include media("<md")
+			width: 100%
 	&__item
 		float: left
 		width: 33.33%
 		padding: 18px 22px 0
 		border-right: 1px solid $color-default
+
+		@include media("<md")
+			&_loaded,
+			&_sales
+				width: 50%
+			
+			&_available
+				width: 100%
+				border-top: 1px solid $color-default
+
+		@include media("<sm")
+			&_loaded,
+			&_sales,
+			&_available
+				width: 100%
+				border-top: 1px solid $color-default
+
 	&__count 
 		padding: 10px 0 7px
 		color: #000
@@ -787,12 +925,17 @@ header
 
 	&__footer 
 		margin: 0 -22px
-		padding: 10px 22px 16px
+		padding: 15px
 		border-top: 1px solid $color-default
 	&-list 
-		width: 180px
+		width: 25%
 		float: right
 		padding: 18px 22px
+		
+		@include media("<md")
+			width: 100%
+			border-top: 1px solid $color-default
+
 		&__item 
 			margin-bottom: 9px
 			&:last-child 
@@ -834,18 +977,31 @@ header
 	padding: 152px 0 80px
 	text-align: center
 	background: #8a8a8a
+	overflow: hidden
 	&__title 
 		color: #fff
 		text-transform: uppercase
 	h2.heading__title 
 		font-size: 115px
 		line-height: 100px
+
+		@include media("<lg")
+			font-size: 90px
+
+		@include media("<md")
+			font-size: 55px
 	h1.heading__title
 		padding-top: 0
 		padding-bottom: 4px
 		font-size: 148px
 		line-height: 118px
 		font-weight: 700
+		
+		@include media("<lg")
+			font-size: 115px
+
+		@include media("<md")
+			font-size: 75px
 
 .banner 
 	background: #fff
@@ -869,9 +1025,25 @@ header
 	background: #fff 
 	border-bottom: 1px solid $color-default
 	&__link 
-		margin-left: 40px
+		float: right
 		font-size: 14px
 		line-height: 18px
+
+		@include media("<sm")
+			text-decoration: none
+			border-bottom: none
+
+	&__link-full
+		@include media("<sm")
+			display: none
+
+	&__link-plus
+		display: none
+		font-weight: bold
+		font-size: 26px
+
+		@include media("<sm")
+			display: block
 	&.sm 
 		height: 50px
 		padding: 7px 22px
@@ -888,6 +1060,8 @@ header
 		display: inline-block
 		vertical-align: top
 		margin-right: 24px
+		margin-top: 5px
+		margin-bottom: 5px
 		&.active .nav-tabs-list__link, 
 		a:hover, &.active .link 
 			color: #000
@@ -952,17 +1126,25 @@ header
 	&-info 
 		margin: -8px 26px
 		position: relative
-		padding: 49px 0
+		padding-top: 49px
 	p 
 		line-height: 16px
 		padding-bottom: 11px
 
 .product-list 
+	+clr
 	margin: 0 0 0 -10px
 	overflow: hidden
 	&.col-4 
-		.product-list__item 
-			width: 25%
+		.product-list__item
+			@include media("<xl")
+				width: 25%
+
+			@include media("<lg")
+				width: 33.333%
+
+			@include media("<md")
+				width: 50%
 	&.col-4:not(.sm)
 		.product-list__img
 			height: 219px
@@ -981,6 +1163,14 @@ header
 		&:hover .product-list__ajax
 			display: block
 
+		@include media("<lg")
+			width: 25%
+
+		@include media("<md")
+			width: 33.333%
+
+		@include media("<sm")
+			width: 50%
 
 	&__ajax
 		display: none
@@ -1034,7 +1224,7 @@ header
 		font-size: 12px
 		line-height: 14px
 		color: rgba(0,0,0, 0.5)
-		
+
 	&__icon 
 		display: inline-block
 		vertical-align: top
@@ -1163,7 +1353,16 @@ header
 	padding: 20px 40px
 	margin: 0 -22px
 .comment
-	padding: 22px 0
+	width: 61%
+	float: left
+	padding: 22px
+	border-right: 1px solid $color-default
+
+	@include media("<lg")
+		width: 100%
+		border: none
+		border-top: 1px solid $color-default
+
 	.author
 		font-size: 14px
 		a 
@@ -1190,10 +1389,20 @@ header
 	margin-top: 10px
 	background: #fff
 	&__header
-		height: 100px
+		+clr
+		min-height: 100px
 		padding: 29px 22px
 		border-bottom: 1px solid $color-default
+
+		h1
+			display: inline-block
+
+			@include media("<md")
+				width: 100%
+				float: left
+
 		.box-select-group
+			+clr
 			height: 100px
 			white-space: nowrap
 			
@@ -1202,6 +1411,13 @@ header
 
 			margin: -29px -13px -29px 0
 			padding: 35px 0 31px 44px
+
+			@include media("<md")
+				float: left
+				margin: 0
+				padding: 0
+				height: auto
+
 			.jq-selectbox__dropdown
 				min-width: 120px
 			.jq-selectbox__select
@@ -1226,21 +1442,34 @@ header
 		margin-bottom: 10px
 	&.catalog 
 		.box-select-group
-			border-left: 1px solid $color-default
+			// border-left: 1px solid $color-default
 
 
 .wrap 
+	+clr
 	overflow: hidden 
 	&-left
 		margin-right: 45%
 		padding: 8px 22px 22px
 		border-right: 1px solid $color-default
+
+		@include media("<md")
+			width: 100%
+			float: left
+			margin-right: 0px
 	&-right
 		float: right
 		width: 45%
 		padding: 8px 115px 22px 22px
 		margin-right: 1px
 		border-left: 1px solid $color-default
+
+		@include media("<lg")
+			padding: 25px
+
+		@include media("<md")
+			width: 100%
+			float: left
 	&.support .wrap-right,
 	&.product .wrap-right
 		padding: 8px 22px 22px 22px	
@@ -1262,13 +1491,33 @@ header
 	&_small 
 		.wrap-left
 			margin-right: 29%
+			
+			@include media("<md")
+				width: 100%
+				float: left
+				margin-right: 0px
+
 		.wrap-right
 			width: 29%
+			
+			@include media("<md")
+				width: 100%
+				float: left
 	&.product
-		.wrap-left 
-			margin-right: 39%
+		.wrap-left
+			float: left
+			width: 61%
+			margin: 0
+
+			@include media("<lg")
+				width: 100%
 		.wrap-right
 			width: 39%
+			margin: 0
+			border: none
+
+			@include media("<lg")
+				width: 100%
 
 
 .column 
@@ -1286,7 +1535,12 @@ header
 		border-bottom: none
 	&__title 
 		padding-bottom: 4px
-		a:hover 
+
+		@include media("<sm")
+			+text-overflow
+			padding-bottom: 8px
+
+		a:hover
 			color: $color-warning
 	&__body 
 		img 
@@ -1298,10 +1552,20 @@ header
 	
 	.product-panel__icon 
 		margin-left: 11px
+
+		&:first-child
+			margin-left: 0px
+
 	.product-panel__item
 		float: none
 		margin-left: 10px
 		font-size: 14px
+
+		@include media("<sm")
+			float: left
+			margin-top: 10px
+			margin-left: 0px
+
 		.fa 
 			color: $color-warning
 
@@ -1318,10 +1582,13 @@ header
 		margin-left: 64px
 		padding-top: 3px
 
-.date 
+.date
 	display: inline-block
 	vertical-align: middle
 	color: rgba(0,0,0,0.5)
+
+	@include media("<sm")
+		width: 100%
 
 .more 
 	color: rgba(0,0,0,0.5)
@@ -1330,8 +1597,12 @@ header
 		border-bottom: 1px solid
 
 .registration
-	margin: 30px 0 0 
+	margin: 30px 0 0
 	max-width: 282px
+
+	@include media("<md")
+		max-width: 100%
+
 	.box-form__button 
 		margin: 24px 0 14px
 
@@ -1429,7 +1700,8 @@ header
 
 .pagination
 	height: 100px
-	padding: 25px 25px 10px
+	padding-top: 25px
+	padding-bottom: 25px
 	background: #fff
 	margin: 10px 0
 	text-align: center
@@ -1473,13 +1745,22 @@ header
 
 .content-wrap
 	float: left
-	width: 950px
+	width: 79%
 	margin-top: 10px
 	.main-wrap 
 		margin-top: 0
+
+	@include media("<xl")
+		width: 77%
+
+	@include media("<lg")
+		width: 74%
+
+	@include media("<md")
+		width: 100%
 aside 
 	float: right
-	width: 230px
+	width: 20%
 	margin-top: 10px
 	.banner 
 		margin-bottom: 10px
@@ -1493,6 +1774,15 @@ aside
 		& + .content-wrap
 			float: right
 
+	@include media("<xl")
+		width: 22%
+
+	@include media("<lg")
+		width: 25%
+
+	@include media("<md")
+		width: 100%
+		display: none
 /* PROFILE */
 
 .profile
@@ -1672,7 +1962,7 @@ footer
 		margin: 0 -10px
 		overflow: hidden
 	&-bottom
-		margin-top: 45px
+		margin-top: 10px
 		padding-bottom: 10px
 		overflow: hidden
 		p 
@@ -1684,12 +1974,37 @@ footer
 		
 		&.col-1
 			width: 33%
+
+			@include media("<lg")
+				width: 100%
+				text-align: center
 		&.col-2
 			width: 16.5%
+
+			@include media("<lg")
+				width: 33.33%
+
+			@include media("<md")
+				width: 50%
+				text-align: left
 		&.col-3
 			width: 21.5%
+
+			@include media("<lg")
+				width: 33.33%
+
+			@include media("<md")
+				width: 50%
+				text-align: right
 		&.col-4
 			width: 29%
+
+			@include media("<lg")
+				width: 33.33%
+
+			@include media("<md")
+				width: 100%
+				text-align: center
 	&__title 
 		padding-bottom: 0
 		color: rgba(0,0,0,0.5)
@@ -1736,6 +2051,7 @@ footer
 		display: inline-block
 		vertical-align: top 
 		margin-right: 13px
+		margin-bottom: 13px
 	&__link 
 		display: block
 		height: 28px

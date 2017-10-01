@@ -1,17 +1,21 @@
 // BEGIN HEADER
 
+a(href="/links.html", style="width: 100%; height: 50px; display: block;") Все ссылки
+
 header
 	div.wrapper
 		div.header-top
 			a.logo(href="#")
 				img.logo__svg(src="img/svg/logo.svg")
+			button.box-nav-list-burger
+				span Открыть меню
 			nav.box-nav-list
 				ul.nav-list.unstyled
 					li.nav-list__item: a.nav-list__link(href="#"): span О нас
 					li.nav-list__item: a.nav-list__link(href="#"): span Продавайте 3D модели
 					li.nav-list__item: a.nav-list__link(href="#"): span Сообщество
 					li.nav-list__item: a.nav-list__link(href="#"): span Поддержка
-					li.nav-list__item
+					li.nav-list__item.nav-list__item_lang
 						a.nav-list__link.arrow-down.js-link-open(href="#", data-target="#box-lang")
 							span Язык:
 							span.nav-list__icon: span.ic.ic_flag-ru
@@ -24,21 +28,21 @@ header
 		div.header-bottom
 			div.header-table
 				a.header-table__item.js-link-open.models(href="#", data-target="#nav")
-					span.models__text.arrow-down 3D models
+					span.models__text.arrow-down
+						span 3D models
 				div.header-table__item.search
 					form 
 						input.search__input.form-control(type="text", placeholder="Поиск")
 						input.search__button(type="submit", value="")
 				
-				a.header-table__item.link-login.fancybox(href="#login"): span Войти 
-				a.header-table__item.link-registr(href="#"): span Регистрация
+				//- a.header-table__item.link-login.fancybox(href="#login"): span Войти 
+				//- a.header-table__item.link-registr(href="#"): span Регистрация
 				
-				a.header-table__item.add-models.hidden(href="#")
-					span Add 3d model
-				div.header-table__item.mini-profile.hidden
+				div.header-table__item.mini-profile.js-link-open.active(data-target="#nav-profile")
 					a.mini-profile__img(href="#"): img(src="img/user.png", alt="")
-					a.mini-profile__link.js-link-open(href="#", data-target="#nav-profile") 
-						span.arrow-down Alexander
+					a.mini-profile__link(href="#") 
+						span.arrow-down.mini-profile__link-login-wrapper
+							span.mini-profile__link-login-name Иванов Алексей
 							span.ic.ic_models-two
 
 			div#nav.navigation.js-open-block
@@ -151,19 +155,8 @@ header
 							li.navigation-list__item: a.navigation-list__link(href="#") Уличное оборудование
 
 			div.nav-profile.js-open-block#nav-profile
-				ul.nav-profile-list.unstyled
-					li.nav-profile-list__item
-						a.nav-profile-list__link(href="#") Публичный Профаил
-					li.nav-profile-list__item
-						a.nav-profile-list__link(href="#") Настройки
-					li.nav-profile-list__item
-						a.nav-profile-list__link(href="#") Уведомления
-							span.kbd 2
-					li.nav-profile-list__item
-						a.nav-profile-list__link(href="#") Выход
-
 				div.nav-profile-wrap
-					div.nav-profile__item
+					div.nav-profile__item.nav-profile__item_loaded
 						div.nav-profile__title: a(href="#") Загруженные модели
 						div.nav-profile__count 10
 						div.nav-profile__footer       
@@ -174,7 +167,7 @@ header
 								a(href="#") Коментарии
 								span.kbd 100 / 3
 
-					div.nav-profile__item
+					div.nav-profile__item.nav-profile__item_sales
 						div.nav-profile__title
 							a(href="#") Текущие продажи
 							span.simbol ?
@@ -184,7 +177,7 @@ header
 								a(href="#") Общие продажи
 								span.kbd $100
 
-					div.nav-profile__item
+					div.nav-profile__item.nav-profile__item_available
 						div.nav-profile__title
 							a(href="#") Доступно моделей
 							span.simbol ?
@@ -195,5 +188,17 @@ header
 							span.delspin
 								a(href="#") Избранное
 								span.kbd 50
-
+				
+				ul.nav-profile-list.unstyled
+					li.nav-profile-list__item
+						a.nav-profile-list__link(href="#") Публичный Профаил
+					li.nav-profile-list__item
+						a.nav-profile-list__link(href="#") Настройки
+					li.nav-profile-list__item
+						a.nav-profile-list__link(href="#") Добавить 3D модель
+					li.nav-profile-list__item
+						a.nav-profile-list__link(href="#") Уведомления
+							span.kbd 2
+					li.nav-profile-list__item
+						a.nav-profile-list__link(href="#") Выход
 // HEADER EOF	
