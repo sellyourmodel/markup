@@ -1,0 +1,70 @@
+.banners-main
+	position: absolute
+	top: 100%
+	left: 10px
+	right: 10px
+	border-top: 1px solid #e5e5e5
+	background-color: #f7f7f7
+	z-index: 15
+
+	&__item
+		position: relative
+		display: block
+		float: left
+		width: 397px
+		height: 120px
+		font-size: 18px
+		text-align: center
+		color: #fff
+		border-right: 1px solid #e5e5e5
+		background-color: #b9b9b9
+		background-repeat: no-repeat
+		-webkit-background-size: cover
+		-moz-background-size: cover
+		background-size: cover
+		background-position: 50% 50%
+		cursor: pointer
+
+	&__item:last-child
+		width: 396px
+		border-right: 0
+
+	&__item:hover
+		background: #8d8d8d
+
+	&__icon
+		position: relative
+		z-index: 10
+		margin-top: 20px
+		height: 32px
+
+	&__name
+		position: relative
+		z-index: 10
+		margin-top: 8px
+		font-size: 18px
+		color: #fff
+		text-transform: uppercase
+
+	&__info
+		position: relative
+		z-index: 10
+		margin-top: 3px
+		font-size: 15px
+		color: #fff
+
+	&__mask
+		display: none
+		position: absolute
+		z-index: 5
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background: rgba(0, 0, 0, 0.36)
+
+	&__item:hover &__mask
+		display: block
+
+.fixed .banners-main
+	display: none
